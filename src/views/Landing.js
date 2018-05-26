@@ -106,7 +106,9 @@ export default class Landing extends Component {
           alignItems: 'center',
           height: '100vh'
         }}>
-          <p>EMAIL:
+          <p style={{
+            color: 'white'
+          }}>EMAIL:
             <a>old_sport_music@gmail.com</a>
           </p>
           <a
