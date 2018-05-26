@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 60px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: #43c6ac; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #191654,
+    #43c6ac
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #191654,
+    #43c6ac
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  opacity: 0;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  li {
+    margin-right: 50px;
+    display: inline-block;
+
+    a {
+      color: white;
+    }
+  }
+
+  &__menu {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
