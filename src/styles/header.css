@@ -1,9 +1,56 @@
+@media (min-width: 500px) {
+  .sm-hide {
+    display: none; } }
+
+@media (min-width: 1025px) {
+  .md-hide {
+    display: none; } }
+
+@media (min-width: 1025px) {
+  .lg-hide {
+    display: none; } }
+
+@media (min-width: 2000px) {
+  .xl-hide {
+    display: none; } }
+
+.clr-dark {
+  color: #121f27 !important; }
+
+.clr-gray {
+  color: #bbbbbb !important; }
+
+.clr-light {
+  color: #ffffff !important; }
+
+.clr-purple {
+  color: #7f4fff !important; }
+
+.clr-red {
+  color: #ff0505 !important; }
+
+.bg-clr-dark {
+  background-color: #121f27 !important; }
+
+.bg-clr-gray {
+  background-color: #bbbbbb !important; }
+
+.bg-clr-light {
+  background-color: #ffffff !important; }
+
+.bg-clr-purple {
+  background-color: #7f4fff !important;
+  color: #ffffff !important; }
+
+.bg-clr-red {
+  background-color: #ff0505 !important; }
+
 .header {
   position: fixed;
   top: 0;
   z-index: 3;
   width: 100%;
-  height: 30px;
+  height: 45px;
   padding: 20px;
   display: flex;
   flex-direction: row;
@@ -14,10 +61,7 @@
   background: -webkit-linear-gradient(to bottom, #191654, #43c6ac);
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #191654, #43c6ac);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  opacity: 0; }
-  .header:hover {
-    opacity: 1; }
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
 
 @keyframes fade {
   0% {
@@ -29,10 +73,13 @@
     display: inline-block; }
     .header li a {
       color: white;
-      font-size: 24px;
+      font-size: 14px;
       text-decoration: none; }
     .header li a:hover {
       text-shadow: 2px 2px black; }
   .header__menu {
     flex-direction: row;
     justify-content: space-around; }
+  @media (min-width: 500px) {
+    .header li a {
+      font-size: 24px; } }

@@ -1,0 +1,105 @@
+@media (min-width: 500px) {
+  .sm-hide {
+    display: none; } }
+
+@media (min-width: 1025px) {
+  .md-hide {
+    display: none; } }
+
+@media (min-width: 1025px) {
+  .lg-hide {
+    display: none; } }
+
+@media (min-width: 2000px) {
+  .xl-hide {
+    display: none; } }
+
+.sliding-menu {
+  position: absolute;
+  top: 0px;
+  left: -240px;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 240px;
+  height: 100vh;
+  padding: 8px;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  z-index: 999; }
+  .sliding-menu button {
+    background-color: #000000;
+    display: inline-block;
+    border: none;
+    text-align: left; }
+
+.main-container {
+  width: 100%;
+  background-color: #000000; }
+  .main-container > button {
+    background-color: #000000;
+    color: #FFFFFF; }
+
+.slide-menu {
+  left: 0px; }
+
+.header2 {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  border: 0;
+  box-shadow: none; }
+  .header2 button {
+    background-color: transparent;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+    margin-left: 20px; }
+    .header2 button:focus {
+      outline: none; }
+  .header2__menu {
+    display: none;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px;
+    list-style-type: none;
+    justify-content: space-around; }
+  .header2__drawer__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none; }
+    .header2__drawer__menu li {
+      margin: 15px; }
+
+@media (min-width: 768px) {
+  .sliding-menu {
+    display: none; }
+  .header2 {
+    flex-direction: row; }
+    .header2 button {
+      display: none; }
+    .header2__menu {
+      display: flex; } }
+
+.fa {
+  font-size: 26px; }
+  .fa-close {
+    align-self: flex-end;
+    float: right;
+    margin: 10px; }
+
+li a {
+  color: white;
+  font-size: 26px;
+  text-decoration: none;
+  text-shadow: 1px 1px black; }
+  li a:hover {
+    text-shadow: 2px 2px black;
+    text-decoration: underline; }
