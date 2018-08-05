@@ -25,7 +25,7 @@ body {
   width: 100%;
   // height: 100vh;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .hero-image {
@@ -76,9 +76,13 @@ h2.section__header {
   font-size: 36px;
 }
 
+.section__content__wrapper {
+    margin-top: 275px;
+}
+
 p.section__content {
   color: white;
-  font-size: 18px;
+  font-size: 12px;
   text-shadow: 1px 1px 1px black;
 }
 .contact-card {
@@ -142,11 +146,7 @@ p.section__content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  p {
-  background-color: rgba(0,0,0,0.3);
-  padding: 5%;
-  border-radius: 50%;
-  }
+  background: linear-gradient(to bottom, transparent, transparent 40%, #000 100%);
 }
 
 .photo__img {
@@ -331,155 +331,6 @@ ul.social-icons {
 }
 
 
-
-///////////////////////////////////////////////////////////////////////////////////////////
-/* LANDING ALT */
-
-// @import url(https://fonts.googleapis.com/css?family=Nunito);
-
-// html {
-//   height: 100%;
-//   overflow: hidden;
-// }
-
-// body {
-//   margin: 0;
-//   padding: 0;
-//   perspective: 1px;
-//   transform-style: preserve-3d;
-//   height: 100%;
-//   overflow-y: scroll;
-//   overflow-x: hidden;
-//   font-family: Nunito;
-// }
-
-// h1 {
-//   font-size: 250%;
-// }
-
-// p {
-//   font-size: 140%;
-//   line-height: 150%;
-//   color: #333;
-// }
-
-// .slide {
-//   position: relative;
-//   padding: 25vh 10%;
-//   min-height: 100vh;
-//   width: 100vw;
-//   box-sizing: border-box;
-//   box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.7);
-//   transform-style: inherit;
-// }
-
-// .photo__img {
-//   position: absolute;
-//   top: 50%;
-//   left: 35%;
-//   width: 320px;
-//   height: 240px;
-//   transform: translateZ(0.25px) scale(0.75) translateX(-94%) translateY(-100%)
-//     rotate(2deg);
-//   padding: 10px;
-//   border-radius: 5px;
-//   background: rgba(240, 230, 220, 0.7);
-//   box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-// }
-
-// photo__img:last-of-type {
-//   transform: translateZ(0.4px) scale(0.6) translateX(-104%) translateY(-40%)
-//     rotate(-5deg);
-// }
-
-// .slide:before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.7);
-// }
-
-// .title {
-//   width: 50%;
-//   padding: 5%;
-//   border-radius: 5px;
-//   background: rgba(20, 20, 20, 0.7);
-//   box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-// }
-
-// .slide:nth-child(2n) .title {
-//   margin-left: 0;
-//   margin-right: auto;
-// }
-
-// .slide:nth-child(2n + 1) .title {
-//   margin-left: auto;
-//   margin-right: 0;
-// }
-
-// .slide,
-// .slide:before {
-//   background: 50% 50% / cover;
-// }
-
-// .header {
-//   text-align: center;
-//   font-size: 175%;
-//   color: #fff;
-//   text-shadow: 0 2px 2px #000;
-// }
-
-// #title {
-//   background-image: url("../assets/banner.jpg");
-//   z-index: 2;
-// }
-
-// #title h1 {
-//   transform: translateZ(0.25px) scale(0.75);
-//   transform-origin: 50% 100%;
-// }
-
-// #slide1:before {
-//   // background-image: url("../assets/Old_Sport_19.jpg");
-//   background-image: url("../assets/banner.jpg");
-//   transform: translateZ(-1px) scale(2);
-// }
-
-// #slide2 {
-//   // background-image: url("../assets/Old_Sport_14.jpg");
-//   background-image: url("../assets/Old_Sport_19.jpg");
-//   z-index: 2;
-// }
-
-// #slide3 {
-//   // background-image: url("../assets/Old_Sport_14.jpg");
-//   background-image: url("../assets/_DSC3855.jpg");
-//   z-index: 2;
-// }
-
-// // #slide4 {
-// //   // background-image: url("https://lorempixel.com/640/480/abstract/5/");
-// //   background-image: url("../assets/Old_Sport_30.jpg");
-// //   transform: translateZ(-1px) scale(2);
-// // }
-// #slide4:before {
-//   // background-image: url("https://lorempixel.com/640/480/abstract/5/");
-//   background-image: url("../assets/Old_Sport_30.jpg");
-//   // background: black;
-//   transform: translateZ(-1px) scale(2);
-// }
-
-// #slide5 {
-//   background-image: url("../assets/Old_Sport_14.jpg");
-//   transform: translateZ(-1px) scale(2);
-// }
-
-
-
-
 ////////////// LANDING3.JS /////////////
 
 // $bgClr: rgba(#0b0f27, .83);
@@ -492,8 +343,8 @@ $numOfSlides: 5; // Add new city in the array in JS and a new image below
 $bgPics: (
   url('../assets/Old_Sport_38.jpg') center center no-repeat,
   url('../assets/Old_Sport_19.jpg') center center no-repeat,
-  url('../assets/_DSC3855.jpg') center center no-repeat,
   url('../assets/Old_Sport_32.jpg') center center no-repeat,
+  url('../assets/_DSC3855.jpg') center center no-repeat,
   url('../assets/Old_Sport_14.jpg') center center no-repeat
 );
 
@@ -506,8 +357,8 @@ $bgPics: (
 .cont {
 	position: relative;
 	height: 100vh;
-  overflow: hidden;
-  // overflow: auto;
+  overflow-x: hidden;
+  // overflow-x: auto;
 }
 
 .slider {
@@ -540,7 +391,7 @@ $bgPics: (
 	left: 0;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
 
 	@for $i from 1 through $numOfSlides {
 		&--#{$i} {
@@ -638,11 +489,29 @@ $bgPics: (
         background-size: contain;
 			}
     }
-    &--2__darkbg:after {
-      background-color: rgba(0, 0, 0, 0.8);
+    &--2 {
+      &__wrapper {
+        position: relative;
+        height: 60vh;
+      }
+      background-size: cover;
+      &__letter {
+        background-position: center 30%;
+        background-size: cover;
+      }
+      &__darkbg {
+        background-position: center 30%;
+        background-size: cover;
+        &:after {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
     }
     &--3__darkbg:after {
-      background-color: rgba(250, 250, 250, 0.2);
+      background-color: rgba(250, 250, 250, 0.1);
+    }
+    &--4__darkbg:after {
+      background-color: rgba(250, 250, 250, 0.15);
     }
     &--5__darkbg {
       background-size: contain;
@@ -754,6 +623,8 @@ $bgPics: (
     height: 100vh;
     .section__content {
       font-size: 22px;
+      margin: 0;
+      padding: 0;
     }
   }
   .side-nav {

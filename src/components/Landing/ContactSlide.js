@@ -1,0 +1,67 @@
+import React, { Component } from 'react';
+
+export default class ContactSlide extends Component {
+  render() {
+    return (
+      <div data-target="5" className="slide slide--5">
+        <div
+          className="slide__darkbg slide--5__darkbg"
+          style={{
+          backgroundColor: 'transparent'
+        }}></div>
+        <div className="slide__text-wrapper slide--5__text-wrapper">
+          <div
+            className="slide__letter slide--5__letter"
+            style={{
+            fontSize: '20vw'
+          }}>
+            CONTACT
+          </div>
+          <div id="contact" className="contact__container">
+            <div className="contact-card">
+              <h2 className="section__header">
+                Contact
+              </h2>
+              <p style={{
+                fontSize: 18
+              }}>{`booking: `}
+                <a href="mailto:nickvergara1@gmail.com">old_sport@ofcourseweare.com</a>
+              </p>
+              <ul className="social-icons">
+                <li>
+                  <a
+                    href="https://www.facebook.com/oldoldsport/"
+                    target="_blank"
+                    className="social-icon">
+                    <i className="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/old_sportmusic/"
+                    target="_blank"
+                    className="social-icon">
+                    <i className="fa fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/OLDSPORTMusic"
+                    target="_blank"
+                    className="social-icon">
+                    <i className="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank" className="social-icon">
+                    <i className="fa fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}

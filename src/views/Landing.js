@@ -1,37 +1,23 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
-import { Link } from 'react-router-dom';
 import Header from '../components/shared/Header';
+import handleSwipe from '../swipe';
+import IntroSlide from '../components/Landing/IntroSlide';
+import AboutSlide from '../components/Landing/AboutSlide';
+import MusicSlide from '../components/Landing/MusicSlide';
+import TourSlide from '../components/Landing/Tour/TourSlide';
+import ContactSlide from '../components/Landing/ContactSlide';
 
 export default class Landing3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: false,
-      toggleMenu: false
+      toggleMenu: false,
     }
-    this.onSelectTrack = this
-      .onSelectTrack
-      .bind(this);
-    this.handleStartStop = this
-      .handleStartStop
-      .bind(this)
-    this.handleClick = this
-      .handleClick
-      .bind(this);
+    // this.handleClick = this
+    //   .handleClick
+    //   .bind(this);
 
-  }
-
-  onSelectTrack(e, track) {
-    e.preventDefault()
-    this.setState({selectedTrack: track})
-    console.log(this.state.selectedTrack)
-  }
-
-  handleStartStop() {
-    this.setState({
-      playing: !this.state.playing
-    })
   }
 
   componentDidMount() {
@@ -47,7 +33,7 @@ export default class Landing3 extends Component {
     let diff = 0;
 
     // Generating slides
-    let arrCities = [
+    let slides = [
       {
         title: 'OLDSPORT',
         content: 'OLDSPORT'
@@ -58,14 +44,14 @@ export default class Landing3 extends Component {
         title: 'MUSIC',
         content: 'MUSIC'
       }, {
-        title: 'GALLERY',
-        content: 'Gallery Coming Soon...'
+        title: 'TOUR',
+        content: 'Tour Dates Coming Soon...'
       }, {
         title: 'CONTACT',
         content: 'Email Us'
       }
     ]; // Change number of slides in CSS also
-    let numOfCities = arrCities.length;
+    let numSlides = slides.length;
 
     function bullets(dir) {
       $('.nav__slide--' + curSlide).removeClass('nav-active');
@@ -100,7 +86,7 @@ export default class Landing3 extends Component {
     }
 
     function navigateRight() {
-      if (curSlide >= numOfCities) 
+      if (curSlide >= numSlides) 
         return;
       pagination(0);
       setTimeout(timeout, animSpd);
@@ -148,25 +134,28 @@ export default class Landing3 extends Component {
     );
 
     $(document).on('keydown', function (e) {
-      if (e.which === 39 || e.which === 40) 
+      if (e.which === 39) 
         navigateRight();
-      if (e.which === 37 || e.which === 38) 
+      if (e.which === 37) 
         navigateLeft();
       }
     );
 
-    $(document).on('mousewheel DOMMouseScroll', function (e) {
-      if (animation) 
-        return;
-      let delta = e.originalEvent.wheelDelta;
+    // $(document).on('mousewheel DOMMouseScroll', function (e) {
+    //   if (animation) 
+    //     return;
+    //   let delta = e.originalEvent.wheelDelta;
 
-      if (delta > 0 || e.originalEvent.detail < 0) 
-        navigateLeft();
-      if (delta < 0 || e.originalEvent.detail > 0) 
-        navigateRight();
-      }
-    );
-    // });
+    //   if (delta > 0 || e.originalEvent.detail < 0) 
+    //     navigateLeft();
+    //   if (delta < 0 || e.originalEvent.detail > 0) 
+    //     navigateRight();
+    //   }
+    // );
+
+    const slider = document.getElementById('slide__container');
+
+    handleSwipe(slider, navigateLeft, navigateRight);
   }
 
   handleClick() {
@@ -187,179 +176,11 @@ export default class Landing3 extends Component {
         <Header/>
         <div className="cont" id="slide__container">
           <div className="slider">
-            <div data-target="1" className="slide slide--1">
-              <div className="slide__darkbg slide--1__darkbg"></div>
-              <div className="slide__text-wrapper slide--1__text-wrapper">
-                <div
-                  className="slide__letter slide--1__letter"
-                  style={{
-                  fontSize: '25vw',
-                  textAlign: 'center'
-                }}>
-                  OLD SPORT
-                </div>
-                <div className="slide__text slide__text--1">
-                  Of course we are...
-                </div>
-              </div>
-            </div>
-            <div data-target="2" className="slide slide--2">
-              <div className="slide__darkbg slide--2__darkbg"></div>
-              <div className="slide__text-wrapper slide--2__text-wrapper">
-                <div className="slide__letter slide--2__letter">
-                  BIO
-                </div>
-                <div className="about__container">
-                  <div>
-                    <div className="bio-card">
-                      <h2 className="section__header">BIO</h2>
-                      <p className="section__content">
-                        OLD_SPORT is a 5-piece soul rock band based out of L.A. with roots to NYC.
-                        Formed to create the soundtrack for the award winning independent film
-                        ELSEWHERE, they have since played all over the east and west coasts headlining
-                        such legendary clubs as The Troubadour in L.A. and The Mercury Lounge in
-                        Manhattan. They are on the heals of a second successful east coast tour and are
-                        currently in the studio recording their debut album with Steve Kille of Dead
-                        Meadow. Influences include Spoon, The Strokes, Elvis Costello, Arcade Fire and
-                        The E Street Band.
-                      </p>
-                      <Link to="about" className="more__info__badge">
-                        Learn more
-                      </Link>
-                      {/* <img className="photo__img" src={require("../assets/IMG_4111.JPG")}/> */}
-                      {/* <img className="photo__img" src={require("../assets/Old_Sport_32.jpg")}/> */}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div data-target="3" className="slide slide--3">
-              <div className="slide__darkbg slide--3__darkbg"></div>
-              <div className="slide__text-wrapper slide--3__text-wrapper">
-                <div
-                  className="slide__letter slide--3__letter"
-                  style={{
-                  fontSize: '30vw'
-                }}>
-                  MUSIC
-                </div>
-                <div className="music__container">
-                  <h2 className="section__header">
-                    MUSIC
-                  </h2>
-                  <div id="spotify__player" style={{width: '75%'}}>
-                    <iframe
-                      src="https://open.spotify.com/embed?uri=spotify:album:2IVpnH6bmApCeElMDSqwwQ"
-                      style={{
-                        width: '100%',
-                        height: 100,
-                        opacity: 0.9
-                      }}
-                      frameBorder="0"
-                      allowtransparency="true" allow="encrypted-media"
-                    />
-                    <iframe
-                      src="https://open.spotify.com/embed?uri=spotify:album:7crdwKShPO8gt1mdqhU6Dd" style={{
-                        width: '100%',
-                        height: 100,
-                        opacity: 0.9
-                      }}
-                      frameBorder="0"
-                      allowtransparency="true" allow="encrypted-media"
-                    />
-                  </div>
-                  <div style={{width: '75%'}}>
-                    <iframe
-                      src="https://open.spotify.com/follow/1/?uri=spotify:artist:7vymsKsxaBuqW9idxrQUOE&size=detail&theme=dark&show-count=0" width="300"
-                      height="56"
-                      scrolling="no"
-                      frameBorder="0"
-                      style={{
-                        border:'none',
-                        overflow:'hidden',
-                        alignSelf: 'flex-end',
-                        margin: 20
-                      }}
-                      allowtransparency="true"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div data-target="4" className="slide slide--4">
-              <div className="slide__darkbg slide--4__darkbg"></div>
-              <div className="slide__text-wrapper slide--4__text-wrapper">
-                <div
-                  className="slide__letter slide--4__letter"
-                  style={{
-                  fontSize: '40vw'
-                }}>
-                  GALLERY
-                </div>
-                <div className="slide__text slide__text--1">
-                  Gallery Coming Soon...
-                </div>
-              </div>
-            </div>
-            <div data-target="5" className="slide slide--5">
-              <div
-                className="slide__darkbg slide--5__darkbg"
-                style={{
-                backgroundColor: 'transparent'
-              }}></div>
-              <div className="slide__text-wrapper slide--5__text-wrapper">
-                <div
-                  className="slide__letter slide--5__letter"
-                  style={{
-                  fontSize: '20vw'
-                }}>
-                  CONTACT
-                </div>
-                <div id="contact" className="contact__container">
-                  <div className="contact-card">
-                    <h2 className="section__header">
-                      Contact
-                    </h2>
-                    <p style={{
-                      fontSize: 18
-                    }}>{`booking: `}
-                      <a href="mailto:nickvergara1@gmail.com">old_sport_music@gmail.com</a>
-                    </p>
-                    <ul className="social-icons">
-                      <li>
-                        <a
-                          href="https://www.facebook.com/oldoldsport/"
-                          target="_blank"
-                          className="social-icon">
-                          <i className="fa fa-facebook"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://www.instagram.com/old_sportmusic/"
-                          target="_blank"
-                          className="social-icon">
-                          <i className="fa fa-instagram"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://twitter.com/OLDSPORTMusic"
-                          target="_blank"
-                          className="social-icon">
-                          <i className="fa fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="" target="_blank" className="social-icon">
-                          <i className="fa fa-youtube"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <IntroSlide />
+            <AboutSlide />
+            <MusicSlide />
+            <TourSlide />
+            <ContactSlide />
           </div>
           <ul className="nav">
             <li data-target="1" className="nav__slide nav__slide--1 nav-active"></li>

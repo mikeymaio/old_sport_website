@@ -45,7 +45,7 @@ export default class Header extends Component {
               <a>Music</a>
             </li>
             <li data-target="4" className="header__slide nav__slide--4">
-              <a>Gallery</a>
+              <a>Tour</a>
             </li>
             <li data-target="5" className="header__slide nav__slide--5">
               <a>Contact</a>
@@ -63,7 +63,7 @@ export default class Header extends Component {
               <a>Music</a>
             </li>
             <li data-target="4" className="header__slide nav__slide--4">
-              <a>Gallery</a>
+              <a>Tour</a>
             </li>
             <li data-target="5" className="header__slide nav__slide--5">
               <a>Contact</a>
