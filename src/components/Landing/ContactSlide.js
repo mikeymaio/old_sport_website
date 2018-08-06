@@ -25,12 +25,12 @@ export default class ContactSlide extends Component {
               <p style={{
                 fontSize: 18
               }}>{`booking: `}
-                <a href="mailto:nickvergara1@gmail.com">old_sport@ofcourseweare.com</a>
+                <a href="mailto:old_sport@ofcourseweare.com">old_sport@ofcourseweare.com</a>
               </p>
               <ul className="social-icons">
                 <li>
                   <a
-                    href="https://www.facebook.com/oldoldsport/"
+                    href="https://www.facebook.com/ofcourseweareoldsport/"
                     target="_blank"
                     className="social-icon">
                     <i className="fa fa-facebook"></i>
@@ -46,17 +46,17 @@ export default class ContactSlide extends Component {
                 </li>
                 <li>
                   <a
-                    href="https://twitter.com/OLDSPORTMusic"
+                    href="https://twitter.com/OLD_SPORTmusic"
                     target="_blank"
                     className="social-icon">
                     <i className="fa fa-twitter"></i>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="" target="_blank" className="social-icon">
                     <i className="fa fa-youtube"></i>
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

@@ -27,7 +27,8 @@ export default class TourSlide extends Component {
     .then((resJson) => {
       console.log(resJson.resultsPage);
       const data = resJson.resultsPage.results.event
-      this.setState({ pastEvents: data });
+      console.log(resJson.resultsPage.results.event)
+      this.setState({ pastEvents: data.reverse() });
     });
   }
 

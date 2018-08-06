@@ -141,17 +141,17 @@ export default class Landing3 extends Component {
       }
     );
 
-    // $(document).on('mousewheel DOMMouseScroll', function (e) {
-    //   if (animation) 
-    //     return;
-    //   let delta = e.originalEvent.wheelDelta;
+    $(document).on('mousewheel DOMMouseScroll', function (e) {
+      if (animation) 
+        return;
+      let delta = e.originalEvent.wheelDelta;
 
-    //   if (delta > 0 || e.originalEvent.detail < 0) 
-    //     navigateLeft();
-    //   if (delta < 0 || e.originalEvent.detail > 0) 
-    //     navigateRight();
-    //   }
-    // );
+      if (delta > 0 || e.originalEvent.detail < 0) 
+        navigateLeft();
+      if (delta < 0 || e.originalEvent.detail > 0) 
+        navigateRight();
+      }
+    );
 
     const slider = document.getElementById('slide__container');
 
