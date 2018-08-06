@@ -961,12 +961,28 @@ ul.social-icons {
 * {
   box-sizing: border-box; }
 
+ul.react-tabs__tab-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+  ul.react-tabs__tab-list .tab__header {
+    font-size: 24px;
+    letter-spacing: 4px;
+    flex: 1; }
+
+.react-tabs__tab--selected {
+  text-shadow: none; }
+
+.react-tabs__tab-panel {
+  display: flex;
+  justify-content: center; }
+
 .wrapper {
   width: 80vw;
   max-width: 1000px;
-  margin: 1em auto;
   padding: 10px;
-  height: 75vh;
+  height: 70vh;
   overflow: auto; }
   .wrapper div {
     font-size: 14px !important;
@@ -998,7 +1014,7 @@ ul.social-icons {
   justify-content: flex-end;
   padding: 10;
   position: absolute;
-  bottom: -25px; }
+  bottom: -100px; }
 
 /* Table column sizing
 ================================== */
@@ -1050,6 +1066,8 @@ span {
 /* Responsive
 ==================================== */
 @media all and (max-width: 750px) {
+  ul.react-tabs__tab-list .tab__header {
+    font-size: 14px; }
   .is-striped {
     background: rgba(0, 0, 0, 0.5); }
   .sk-logo__wrapper {
