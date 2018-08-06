@@ -620,7 +620,9 @@ ul.social-icons {
       height: 60vh; }
     .slide--2__letter {
       background-position: center 30%;
-      background-size: cover; }
+      background-size: cover;
+      font-size: 35vw;
+      font-weight: 800; }
     .slide--2__darkbg {
       background-position: center 30%;
       background-size: cover; }
@@ -667,7 +669,9 @@ ul.social-icons {
       height: 60vh; }
     .slide--2__letter {
       background-position: center 30%;
-      background-size: cover; }
+      background-size: cover;
+      font-size: 35vw;
+      font-weight: 800; }
     .slide--2__darkbg {
       background-position: center 30%;
       background-size: cover; }
@@ -714,7 +718,9 @@ ul.social-icons {
       height: 60vh; }
     .slide--2__letter {
       background-position: center 30%;
-      background-size: cover; }
+      background-size: cover;
+      font-size: 35vw;
+      font-weight: 800; }
     .slide--2__darkbg {
       background-position: center 30%;
       background-size: cover; }
@@ -761,7 +767,9 @@ ul.social-icons {
       height: 60vh; }
     .slide--2__letter {
       background-position: center 30%;
-      background-size: cover; }
+      background-size: cover;
+      font-size: 35vw;
+      font-weight: 800; }
     .slide--2__darkbg {
       background-position: center 30%;
       background-size: cover; }
@@ -808,7 +816,9 @@ ul.social-icons {
       height: 60vh; }
     .slide--2__letter {
       background-position: center 30%;
-      background-size: cover; }
+      background-size: cover;
+      font-size: 35vw;
+      font-weight: 800; }
     .slide--2__darkbg {
       background-position: center 30%;
       background-size: cover; }
@@ -1012,9 +1022,10 @@ ul.react-tabs__tab-list {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
   padding: 10;
   position: absolute;
-  bottom: -100px; }
+  bottom: -55px; }
 
 /* Table column sizing
 ================================== */
@@ -1071,7 +1082,7 @@ span {
   .is-striped {
     background: rgba(0, 0, 0, 0.5); }
   .sk-logo__wrapper {
-    bottom: 75vh; }
+    bottom: 79vh; }
   .Rtable {
     background: transparent; }
   .Rtable--collapse {

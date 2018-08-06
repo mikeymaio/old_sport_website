@@ -498,6 +498,11 @@ $bgPics: (
       &__letter {
         background-position: center 30%;
         background-size: cover;
+        // letter-spacing: 5vw;
+        font: {
+          size: 35vw;
+          weight: 800;
+        }
       }
       &__darkbg {
         background-position: center 30%;

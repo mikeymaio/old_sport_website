@@ -73,9 +73,10 @@ ul.react-tabs__tab-list {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
   padding: 10;
   position: absolute;
-  bottom: -100px;
+  bottom: -55px;
 }
 
 
@@ -155,7 +156,7 @@ span {
   }
 
   .sk-logo__wrapper {
-    bottom: 75vh;
+    bottom: 79vh;
   }
   .Rtable {
     background: transparent;
