@@ -19,7 +19,6 @@ export default class TourSlide extends Component {
       this.setState({ upcomingEvents: data });
     });
 
-    
     fetch('https://api.songkick.com/api/3.0/artists/8772679/gigography.json?apikey=oVkLSsVWWKzFBEB5')
     .then((response) => {
       return response.json();

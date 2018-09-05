@@ -10,7 +10,9 @@ export default class TourList extends Component {
       )
     }
     return (
-      <h1>No Shows Scheduled</h1>
+      <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+        <h1>No Shows Scheduled</h1>
+      </div>
     )
   }
   render() {
