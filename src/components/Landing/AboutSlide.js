@@ -16,9 +16,9 @@ export default class AboutSlide extends Component {
             <div>
               <div className="bio-card">
                 <div className="slide__text slide__text--2" style={{ fontSize: '2vw' }}>
-                  Of course we are...
+                  Of course we are
                 </div>
-                <div className="slide__text slide__text--2--name" style={{ fontSize: '7vw', marginBottom: 40 }}>
+                <div className="slide__text slide__text--2--name" style={{ fontSize: '7vw', marginBottom: 0 }}>
                   OLD_SPORT
                 </div>
                 <div className="section__content__wrapper">
