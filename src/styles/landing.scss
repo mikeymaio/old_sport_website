@@ -77,7 +77,9 @@ h2.section__header {
 }
 
 .section__content__wrapper {
-    margin-top: 275px;
+    // margin-top: 275px;
+    justify-content: center;
+    align-items: 'center';
 }
 
 p.section__content {
@@ -145,8 +147,8 @@ p.section__content {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  background: linear-gradient(to bottom, transparent, transparent 40%, #000 100%);
+  // justify-content: space-around;
+  // background: linear-gradient(to bottom, transparent, transparent 40%, #000 100%);
 }
 
 .photo__img {
@@ -366,7 +368,7 @@ $bgPics: (
 	height: 100%;
 	transform: translate3d(0, 0, 0);
 	will-change: transform;
-	// cursor: all-scroll;
+	cursor: all-scroll;
 	user-select: none;
 
 	&.animation {
@@ -430,7 +432,7 @@ $bgPics: (
 		width: 100%;
 		height: 100%;
 		transform: translate3d(0, 0, 0);
-		-webkit-text-fill-color: transparent !important;
+		-webkit-text-fill-color: rgba(0,0,0,0.1) !important;
 		-webkit-background-clip: text !important;
 		font: {
 			size: 50vw;
@@ -455,6 +457,12 @@ $bgPics: (
     user-select: none;
     text-shadow: 2px 2px black;
     text-align: center;
+
+    &--2 {
+      &--name {
+        letter-spacing: 25px;
+      }
+    }
 	}
 	&__text:nth-child(odd) {
 		z-index: 2;
@@ -490,27 +498,28 @@ $bgPics: (
 			}
     }
     &--2 {
-      &__wrapper {
-        position: relative;
-        height: 60vh;
-      }
-      background-size: cover;
+      // &__wrapper {
+      //   position: relative;
+      //   height: 100vh;
+      // }
+      // background-size: cover;
       &__letter {
-        background-position: center 30%;
-        background-size: cover;
+        // background-position: center 30%;
+        // background-size: cover;
         // letter-spacing: 5vw;
-        font: {
-          size: 35vw;
-          weight: 800;
-        }
+        // font: {
+        //   size: 35vw;
+        //   weight: 800;
+        // }
+        -webkit-text-fill-color: rgba(0,0,0,0.85) !important;
       }
-      &__darkbg {
-        background-position: center 30%;
-        background-size: cover;
-        &:after {
-          background-color: rgba(0, 0, 0, 0.8);
-        }
-      }
+      // &__darkbg {
+      //   background-position: center 30%;
+      //   background-size: contain;
+      //   &:after {
+      //     background-color: rgba(0, 0, 0, 0.7);
+      //   }
+      // }
     }
     &--3__darkbg:after {
       background-color: rgba(250, 250, 250, 0.1);
@@ -627,7 +636,7 @@ $bgPics: (
   .bio-card {
     height: 100vh;
     .section__content {
-      font-size: 20px;
+      font-size: 2vw;
       margin: 0;
       padding: 0;
     }

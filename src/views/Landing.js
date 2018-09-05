@@ -13,6 +13,7 @@ export default class Landing3 extends Component {
     super(props);
     this.state = {
       toggleMenu: false,
+      curSlide: 0,
     }
     // this.handleClick = this
     //   .handleClick
@@ -86,21 +87,23 @@ export default class Landing3 extends Component {
     }
 
     function navigateRight() {
-      if (curSlide >= numSlides) 
+      if (curSlide >= numSlides)
         return;
       pagination(0);
       setTimeout(timeout, animSpd);
       bullets(curSlide + 1);
       curSlide++;
+      // this.setState({ curSlide })
     }
 
     function navigateLeft() {
-      if (curSlide <= 1) 
+      if (curSlide <= 1)
         return;
       pagination(2);
       setTimeout(timeout, animSpd);
       bullets(curSlide - 1);
       curSlide--;
+      // this.setState({ curSlide })
     }
 
     function toDefault() {
@@ -189,12 +192,16 @@ export default class Landing3 extends Component {
             <li data-target="4" className="nav__slide nav__slide--4"></li>
             <li data-target="5" className="nav__slide nav__slide--5"></li>
           </ul>
+          {/* {this.state.curSlide !== 5 && ( */}
           <div data-target="right" className="side-nav side-nav--right">
             <span className="fa fa-chevron-right"></span>
           </div>
+          {/* )} */}
+          {/* {this.state.curSlide !== 0 && ( */}
           <div data-target="left" className="side-nav side-nav--left">
             <span className="fa fa-chevron-left"></span>
           </div>
+          {/* )} */}
         </div>
       </div>
     )

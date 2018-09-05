@@ -36,10 +36,10 @@ export default class Header extends Component {
           </button>
           <ul className="header2__drawer__menu">
           <li data-target="1" className="header__slide nav__slide--1 nav-active">
-              <a>OS</a>
+              <a>Home</a>
             </li>
             <li data-target="2" className="header__slide nav__slide--2">
-              <a>About</a>
+              <a>Bio</a>
             </li>
             <li data-target="3" className="header__slide nav__slide--3">
               <a>Music</a>
@@ -52,21 +52,25 @@ export default class Header extends Component {
             </li>
           </ul>
         </Drawer>
-        <ul className="header2__menu">
+        <ul className="header2__menu" style={{ alignItems: 'center' }} >
             <li data-target="1" className="header__slide nav__slide--1 nav-active">
-              <a>OS</a>
+              {/* <a>OS</a> */}
+              {/* <image src="../../assets/old-sport-logo.jpg" style={{ height: 40, width: 40}} /> */}
+              <div style={{ height: 60, width: 60, backgroundColor: 'black', borderRadius: 30, marginTop: 10, justifyContent: 'cennter', alignItems: 'center', overflow: 'hidden', padding: 5 }}>
+                <img src={require("../../assets/old-sport-logo-white-black.jpg")} alt="OS" style={{ height: '100%', width: '100%' }} />
+              </div>
             </li>
             <li data-target="2" className="header__slide nav__slide--2">
-              <a>About</a>
+              <a>BIO</a>
             </li>
             <li data-target="3" className="header__slide nav__slide--3">
-              <a>Music</a>
+              <a>MUSIC</a>
             </li>
             <li data-target="4" className="header__slide nav__slide--4">
-              <a>Tour</a>
+              <a>TOUR</a>
             </li>
             <li data-target="5" className="header__slide nav__slide--5">
-              <a>Contact</a>
+              <a>CONTACT</a>
             </li>
           </ul>
       </header>

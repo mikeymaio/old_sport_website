@@ -14,9 +14,9 @@ export default class IntroSlide extends Component {
           }}>
             OLD SPORT
           </div>
-          <div className="slide__text slide__text--1">
+          {/* <div className="slide__text slide__text--1">
             Of course we are...
-          </div>
+          </div> */}
         </div>
       </div>
     );
