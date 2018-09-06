@@ -19,7 +19,7 @@ export default class IntroSlide extends Component {
 
   renderLanding() {
     const browser = this.checkBrowser();
-    if (browser === 'Safari') {
+    if (browser === 'Safari' || browser === 'IE') {
       return (
         <div data-target="1" className="slide slide--1">
           <div className="banner__fallback"></div>
