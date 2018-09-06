@@ -36,16 +36,10 @@ export default class TourSlide extends Component {
       <div data-target="4" className="slide slide--4">
         <div className="slide__darkbg slide--4__darkbg"></div>
         <div className="slide__text-wrapper slide--4__text-wrapper">
-          <div
-            className="slide__letter slide--4__letter"
-            style={{
-            fontSize: '30vw'
-          }}>
+          <div className="slide__letter slide--4__letter">
             TOUR
           </div>
           <div className="slide__text slide__text--1">
-            {/* <TourList gigs={this.state.upcomingEvents} /> */}
-
             <Tabs>
               <TabList>
                 <Tab className="tab__header">UPCOMING</Tab>

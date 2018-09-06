@@ -15,10 +15,10 @@ export default class AboutSlide extends Component {
           <div className="about__container" style={{ position: 'absolute', zIndex: 100, top: 20}}>
             <div>
               <div className="bio-card">
-                <div className="slide__text slide__text--2" style={{ fontSize: '2vw' }}>
+                <div className="slide__text slide__text--2">
                   Of course we are
                 </div>
-                <div className="slide__text slide__text--2--name" style={{ fontSize: '7vw', marginBottom: 0 }}>
+                <div className="slide__text slide__text--2--name">
                   OLD_SPORT
                 </div>
                 <div className="section__content__wrapper">

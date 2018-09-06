@@ -77,9 +77,10 @@ h2.section__header {
 }
 
 .section__content__wrapper {
-    // margin-top: 275px;
+    display: flex;
+    flex: 1;
     justify-content: center;
-    align-items: 'center';
+    align-items: center;
 }
 
 p.section__content {
@@ -360,7 +361,6 @@ $bgPics: (
 	position: relative;
 	height: 100vh;
   overflow-x: hidden;
-  // overflow-x: auto;
 }
 
 .slider {
@@ -393,7 +393,7 @@ $bgPics: (
 	left: 0;
 	width: 100%;
 	height: 100%;
-	overflow-x: hidden;
+	overflow: hidden;
 
 	@for $i from 1 through $numOfSlides {
 		&--#{$i} {
@@ -459,8 +459,15 @@ $bgPics: (
     text-align: center;
 
     &--2 {
+      font-size: 2vw;
+      &--container {
+        padding: 10px;
+
+      }
       &--name {
+        font-size: 5vw;
         letter-spacing: 25px;
+        margin-top: 10px;
       }
     }
 	}
@@ -498,34 +505,20 @@ $bgPics: (
 			}
     }
     &--2 {
-      // &__wrapper {
-      //   position: relative;
-      //   height: 100vh;
-      // }
-      // background-size: cover;
       &__letter {
-        // background-position: center 30%;
-        // background-size: cover;
-        // letter-spacing: 5vw;
-        // font: {
-        //   size: 35vw;
-        //   weight: 800;
-        // }
         -webkit-text-fill-color: rgba(0,0,0,0.85) !important;
       }
-      // &__darkbg {
-      //   background-position: center 30%;
-      //   background-size: contain;
-      //   &:after {
-      //     background-color: rgba(0, 0, 0, 0.7);
-      //   }
-      // }
     }
     &--3__darkbg:after {
       background-color: rgba(250, 250, 250, 0.1);
     }
-    &--4__darkbg:after {
-      background-color: rgba(250, 250, 250, 0.15);
+    &--4 {
+      &__letter {
+        font-size: 30vw;
+      }
+      &__darkbg:after {
+        background-color: rgba(250, 250, 250, 0.15);
+      }
     }
     &--5__darkbg {
       background-size: contain;
@@ -543,6 +536,13 @@ $bgPics: (
       }
     }
 	}
+}
+
+.banner__fallback {
+  height: 100vh;
+  width: 100vw;
+  background: url('../assets/banner-fallback.jpg') no-repeat center center;
+  background-size: contain;
 }
 
 .nav {
@@ -655,6 +655,9 @@ $bgPics: (
           background-size: cover;
         }
       }
+      &--4__letter {
+        font-size: 30vw;
+      }
       &--5__darkbg {
         background-size: cover;
         background-position: center top;
@@ -664,5 +667,15 @@ $bgPics: (
         background-position: center top;
       }
     }
+    &__text {
+      &--2 {
+        &--name {
+          font-size: 7vw;
+        }
+      }
+    }
+  }
+  .banner__fallback {
+    background-size: cover
   }
 }

@@ -92,8 +92,10 @@ h2.section__header {
   font-size: 36px; }
 
 .section__content__wrapper {
+  display: flex;
+  flex: 1;
   justify-content: center;
-  align-items: 'center'; }
+  align-items: center; }
 
 p.section__content {
   color: white;
@@ -340,7 +342,7 @@ ul.social-icons {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden; }
+  overflow: hidden; }
   .slide--1 {
     left: 0%; }
   .slide--2 {
@@ -397,8 +399,14 @@ ul.social-icons {
     user-select: none;
     text-shadow: 2px 2px black;
     text-align: center; }
-    .slide__text--2--name {
-      letter-spacing: 25px; }
+    .slide__text--2 {
+      font-size: 2vw; }
+      .slide__text--2--container {
+        padding: 10px; }
+      .slide__text--2--name {
+        font-size: 5vw;
+        letter-spacing: 25px;
+        margin-top: 10px; }
   .slide__text:nth-child(odd) {
     z-index: 2; }
   .slide__text:nth-child(even) {
@@ -426,6 +434,8 @@ ul.social-icons {
     -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
+  .slide--4__letter {
+    font-size: 30vw; }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
   .slide--5__darkbg {
@@ -462,6 +472,8 @@ ul.social-icons {
     -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
+  .slide--4__letter {
+    font-size: 30vw; }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
   .slide--5__darkbg {
@@ -498,6 +510,8 @@ ul.social-icons {
     -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
+  .slide--4__letter {
+    font-size: 30vw; }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
   .slide--5__darkbg {
@@ -534,6 +548,8 @@ ul.social-icons {
     -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
+  .slide--4__letter {
+    font-size: 30vw; }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
   .slide--5__darkbg {
@@ -570,6 +586,8 @@ ul.social-icons {
     -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
+  .slide--4__letter {
+    font-size: 30vw; }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
   .slide--5__darkbg {
@@ -583,6 +601,12 @@ ul.social-icons {
     background-position: center; }
     .slide--5__letter:after {
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/Old_Sport_14.jpg"); }
+
+.banner__fallback {
+  height: 100vh;
+  width: 100vw;
+  background: url("../assets/banner-fallback.jpg") no-repeat center center;
+  background-size: contain; }
 
 .nav {
   position: absolute;
@@ -665,6 +689,8 @@ ul.social-icons {
     background-size: cover; }
   .slide--1__letter {
     background-size: cover; }
+  .slide--4__letter {
+    font-size: 30vw; }
   .slide--5__darkbg {
     background-size: cover;
     background-position: center top; }
@@ -675,6 +701,8 @@ ul.social-icons {
     background-size: cover; }
   .slide--2__letter {
     background-size: cover; }
+  .slide--4__letter {
+    font-size: 30vw; }
   .slide--5__darkbg {
     background-size: cover;
     background-position: center top; }
@@ -685,6 +713,8 @@ ul.social-icons {
     background-size: cover; }
   .slide--3__letter {
     background-size: cover; }
+  .slide--4__letter {
+    font-size: 30vw; }
   .slide--5__darkbg {
     background-size: cover;
     background-position: center top; }
@@ -695,6 +725,8 @@ ul.social-icons {
     background-size: cover; }
   .slide--4__letter {
     background-size: cover; }
+  .slide--4__letter {
+    font-size: 30vw; }
   .slide--5__darkbg {
     background-size: cover;
     background-position: center top; }
@@ -705,9 +737,15 @@ ul.social-icons {
     background-size: cover; }
   .slide--5__letter {
     background-size: cover; }
+  .slide--4__letter {
+    font-size: 30vw; }
   .slide--5__darkbg {
     background-size: cover;
     background-position: center top; }
   .slide--5__letter {
     background-size: cover;
-    background-position: center top; } }
+    background-position: center top; }
+  .slide__text--2--name {
+    font-size: 7vw; }
+  .banner__fallback {
+    background-size: cover; } }
