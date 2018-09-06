@@ -324,7 +324,7 @@ ul.social-icons {
   height: 100%;
   transform: translate3d(0, 0, 0);
   will-change: transform;
-  cursor: all-scroll;
+  cursor: default;
   user-select: none; }
   .slider.animation {
     transition: transform 1000ms ease-in-out; }
