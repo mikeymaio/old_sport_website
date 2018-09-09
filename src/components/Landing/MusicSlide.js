@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AudioPlayerContainer from '../AudioPlayer/AudioPlayerContainer';
 
 export default class MusicSlide extends Component {
   render() {
@@ -17,7 +18,7 @@ export default class MusicSlide extends Component {
             <h2 className="section__header">
               MUSIC
             </h2>
-            <div id="spotify__player" style={{width: '75%'}}>
+            {/* <div id="spotify__player" style={{width: '75%'}}>
               <iframe
                 src="https://open.spotify.com/embed?uri=spotify:album:2IVpnH6bmApCeElMDSqwwQ"
                 style={{
@@ -37,7 +38,8 @@ export default class MusicSlide extends Component {
                 frameBorder="0"
                 allowtransparency="true" allow="encrypted-media"
               />
-            </div>
+            </div> */}
+            <AudioPlayerContainer tracks={[]}/>
             <div style={{width: '75%'}}>
               <iframe
                 src="https://open.spotify.com/follow/1/?uri=spotify:artist:7vymsKsxaBuqW9idxrQUOE&size=detail&theme=dark&show-count=0" width="300"

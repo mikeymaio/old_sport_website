@@ -25,7 +25,7 @@ export default class ContactSlide extends Component {
               <p style={{
                 fontSize: 18
               }}>{`booking: `}
-                <a href="mailto:old_sport@ofcourseweare.com">old_sport@ofcourseweare.com</a>
+                <a href="mailto:contact@ofcourseweare.com">contact@ofcourseweare.com</a>
               </p>
               <ul className="social-icons">
                 <li>

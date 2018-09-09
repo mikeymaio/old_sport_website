@@ -20,6 +20,8 @@ export default class Header extends Component {
     console.log(this.state.toggleMenu);
     this.setState({toggleMenu: !this.state.toggleMenu});
   }
+
+  
   render() {
     let slideClass;
     this.state.toggleMenu
@@ -35,20 +37,20 @@ export default class Header extends Component {
             <span className="fa fa-close"></span>
           </button>
           <ul className="header2__drawer__menu">
-          <li data-target="1" className="header__slide nav__slide--1 nav-active">
-              <a>Home</a>
+          <li data-target="1" className="header__slide nav__slide--1 nav-active" onClick={() => this.props.onNav(1)}>
+              <p>Home</p>
             </li>
-            <li data-target="2" className="header__slide nav__slide--2">
-              <a>Bio</a>
+            <li data-target="2" className="header__slide nav__slide--2" onClick={() => this.props.onNav(2)}>
+              <p>Bio</p>
             </li>
-            <li data-target="3" className="header__slide nav__slide--3">
-              <a>Music</a>
+            <li data-target="3" className="header__slide nav__slide--3" onClick={() => this.props.onNav(4)}>
+              <p>Music</p>
             </li>
             <li data-target="4" className="header__slide nav__slide--4">
-              <a>Tour</a>
+              <p>Tour</p>
             </li>
             <li data-target="5" className="header__slide nav__slide--5">
-              <a>Contact</a>
+              <p>Contact</p>
             </li>
           </ul>
         </Drawer>

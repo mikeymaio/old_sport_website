@@ -83,6 +83,10 @@ h2.section__header {
     align-items: center;
 }
 
+.tour-list {
+  overflow: scroll;
+}
+
 p.section__content {
   color: white;
   font-size: 12px;
