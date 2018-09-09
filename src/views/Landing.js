@@ -35,43 +35,7 @@ export default class Landing3 extends Component {
   }
 
   componentDidMount() {
-    // $(document).ready(function() {
-    const $cont = $('.cont');
-    const $slider = $('.slider');
-    const $nav = $('.nav');
-    const winW = $(window).width();
-    const animSpd = 1000; // Change also in CSS
-    const distOfLetGo = winW * 0.2;
-    // let curSlide = 1;
-    // let animation = false;
-    // let diff = 0;
-
-    // Generating slides
-    let slides = [
-      {
-        title: 'OLDSPORT',
-        content: 'OLDSPORT'
-      }, {
-        title: 'BIO',
-        content: 'OUR BIO...'
-      }, {
-        title: 'MUSIC',
-        content: 'MUSIC'
-      }, {
-        title: 'TOUR',
-        content: 'Tour Dates Coming Soon...'
-      }, {
-        title: 'CONTACT',
-        content: 'Email Us'
-      }
-    ]; // Change number of slides in CSS also
-    // let numSlides = slides.length;
-
     this.init();
-
-    // this.slider.addEventListener('DOMMouseScroll', this.init)
-    // this.slider.addEventListener('mousewheel', this.init)
-
   }
 
   init() {
@@ -79,14 +43,14 @@ export default class Landing3 extends Component {
       const self = this;
     $(document)
       .on('click', '.nav__slide:not(.nav-active)', function () {
-        let target = $(this).attr('data-target');
+        let target = Number($(this).attr('data-target'));
         self.bullets(target);
         self.setState({ slideIndex: target });
         self.pagination(1);
       });
 
     $(document).on('click', '.header__slide:not(.nav-active)', function () {
-      let target = $(this).attr('data-target');
+      let target = Number($(this).attr('data-target'));
       self.bullets(target);
       self.setState({ slideIndex: target });
       self.pagination(1);
@@ -95,9 +59,9 @@ export default class Landing3 extends Component {
     $(document).on('click', '.side-nav', function () {
       let target = $(this).attr('data-target');
 
-      if (target === 'right') 
+      if (target === 'right')
         self.navigateRight();
-      if (target === 'left') 
+      if (target === 'left')
         self.navigateLeft();
       }
     );
@@ -110,12 +74,8 @@ export default class Landing3 extends Component {
       }
     );
 
-    
-      console.log(this);
-      
+
     $(document).on('mousewheel DOMMouseScroll', function (e) {
-      console.log
-      console.log('SCROLL NOTICED')
       if (self.state.animation)
         return;
       let delta = e.originalEvent.wheelDelta;
@@ -229,7 +189,7 @@ export default class Landing3 extends Component {
       <div className="main-container">
         <Header onNav={index => this.handleHeaderNav(index)} />
         <div className="cont" id="slide__container">
-          <div className="slider" ref={node => this.slider = node}>
+          <div className="slider" tabIndex="0" ref={node => this.slider = node} onKeyPress={e => console.log('KEY PRESSED = ', e)}>
             <IntroSlide />
             <AboutSlide />
             <MusicSlide />
@@ -254,9 +214,6 @@ export default class Landing3 extends Component {
               <span className="fa fa-chevron-right"></span>
             </div>
           )}
-          {/* )} */}
-          {/* {this.state.this.state.slideIndex !== 0 && ( */}
-          {/* )} */}
         </div>
       </div>
     )

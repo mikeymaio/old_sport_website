@@ -1214,7 +1214,7 @@ h2 a:hover {
   background-color: transparent;
   color: var(--sb-btn-color);
   font-size: 1em;
-  padding: 1rem;
+  padding: 5px;
   margin: 0;
   height: auto;
   vertical-align: middle;

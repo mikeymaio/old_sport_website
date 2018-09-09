@@ -46,31 +46,6 @@ export default class MusicSlide extends Component {
             MUSIC
           </div>
           <div className="music__container">
-            <h2 className="section__header">
-              MUSIC
-            </h2>
-            {/* <div id="spotify__player" style={{width: '75%'}}>
-              <iframe
-                src="https://open.spotify.com/embed?uri=spotify:album:2IVpnH6bmApCeElMDSqwwQ"
-                style={{
-                  width: '100%',
-                  height: 100,
-                  opacity: 0.9
-                }}
-                frameBorder="0"
-                allowtransparency="true" allow="encrypted-media"
-              />
-              <iframe
-                src="https://open.spotify.com/embed?uri=spotify:album:7crdwKShPO8gt1mdqhU6Dd" style={{
-                  width: '100%',
-                  height: 100,
-                  opacity: 0.9
-                }}
-                frameBorder="0"
-                allowtransparency="true" allow="encrypted-media"
-              />
-            </div> */}
-
             <AudioPlayerContainer
               tracks={this.state.tracks}
               selectedTrack={this.state.selectedTrack}
@@ -80,7 +55,7 @@ export default class MusicSlide extends Component {
               onSelectTrack={this.onSelectTrack}
             />
 
-            <div style={{width: '75%'}}>
+            <div style={{width: '70%', backgroundColor: 'rgba(0,0,0,0.7)'}}>
               <iframe
                 src="https://open.spotify.com/follow/1/?uri=spotify:artist:7vymsKsxaBuqW9idxrQUOE&size=detail&theme=dark&show-count=0" width="300"
                 height="56"
@@ -90,7 +65,7 @@ export default class MusicSlide extends Component {
                   border:'none',
                   overflow:'hidden',
                   alignSelf: 'flex-end',
-                  margin: 20
+                  margin: '10px 20px',
                 }}
                 allowtransparency="true"
               />

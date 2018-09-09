@@ -87,7 +87,7 @@ class AudioPlayerContainer extends Component {
         height: 'auto',
         // width: ' 70%',
         // padding: 100,
-        backgroundColor: 'rgba(0,0,0,0.9)'
+        backgroundColor: 'rgba(0,0,0,0.7)'
       }}>
         <div className="bg-black absolute top-0 right-0 left-0 bottom-0 muted" />
         <div
@@ -98,10 +98,10 @@ class AudioPlayerContainer extends Component {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          paddingTop: 60,
+          paddingTop: 50,
         }}>
           { this.props.selectedTrack && (
-            <div>
+            <div style={{ textAlign: 'center' }}>
               <h3 className="h4 nowrap caps mb0">{this.props.selectedTrack.artist}</h3>
               <h2 className="h0 nowrap caps m0">{this.props.selectedTrack.title}</h2>
             </div>

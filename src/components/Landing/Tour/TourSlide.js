@@ -34,41 +34,29 @@ export default class TourSlide extends Component {
   componentWillReceiveProps(nextProps) {
     console.log(nextProps.slideIndex)
     if (nextProps.slideIndex === 4) {
-      // this.list.addEventListener('click', this.preventScrollPropagation)
       this.list.addEventListener('DOMMouseScroll', this.preventScrollPropagation)
       this.list.addEventListener('mousewheel', this.preventScrollPropagation)
       this.list.addEventListener('mouseover', this.preventScrollPropagation)
 
       this.list.addEventListener('keydown', this.preventScrollPropagation)
-      // this.list.addEventListener('keydown', () => console.log('KEYDOWN'));
       this.list.addEventListener('mouseover', e => {
         $(this.list).focus();
         this.preventScrollPropagation(e)
       })
       this.list.addEventListener('mouseout', e => {
         $(this.list).blur();
-        // this.preventScrollPropagation(e)
       })
     } else {
-      // this.list.removeEventListener('click', this.preventScrollPropagation)
       this.list.removeEventListener('DOMMouseScroll', this.preventScrollPropagation)
       this.list.removeEventListener('mousewheel', this.preventScrollPropagation)
       this.list.removeEventListener('mouseover', this.preventScrollPropagation)
 
-      this.list.removeEventListener('keydown', () => console.log('KEY PRESSED'))
-      // this.list.removeEventListener('keydown', () => console.log('KEYDOWN'));
+      this.list.removeEventListener('keydown', this.preventScrollPropagation)
       this.list.removeEventListener('mouseover', this.preventScrollPropagation)
     }
   }
 
   preventScrollPropagation(e) {
-    console.log(e)
-    // const scrollTop = this.scrollTop
-    // const scrollHeight = this.scrollHeight
-    // const height = parseFloat(window.getComputedStyle(this, null).getPropertyValue('height'))
-    // const delta = e.type == 'DOMMouseScroll' ? (e.detail * -40) : e.wheelDelta
-    // const up = delta > 0
-
     const prevent = () => {
       e.stopPropagation()
       // e.preventDefault()
@@ -80,20 +68,6 @@ export default class TourSlide extends Component {
 
     // prevent()
 
-    // Scrolling down, but this will take us past the bottom.
-    // if (!up && -delta > scrollHeight - height - scrollTop) {
-    //   console.log('PREVENTING HORIZONTAL SCROLL, LINE 69')
-    //   prevent()
-    //   return this.scrollTop = scrollHeight
-    //   // return prevent()
-
-    // // Scrolling up, but this will take us past the top.
-    // } else if (up && delta > scrollTop) {
-    //   console.log('PREVENTING HORIZONTAL SCROLL, LINE 76')
-    //   prevent()
-    //   return this.scrollTop = 0
-    //   // return prevent()
-    // }
   }
 
   render() {
