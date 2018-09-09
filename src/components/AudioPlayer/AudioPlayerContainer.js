@@ -100,8 +100,12 @@ class AudioPlayerContainer extends Component {
           alignItems: 'center',
           paddingTop: 60,
         }}>
-          <h3 className="h4 nowrap caps mb0">{this.props.artist}</h3>
-          <h2 className="h0 nowrap caps m0">{this.props.title}</h2>
+          { this.props.selectedTrack && (
+            <div>
+              <h3 className="h4 nowrap caps mb0">{this.props.selectedTrack.artist}</h3>
+              <h2 className="h0 nowrap caps m0">{this.props.selectedTrack.title}</h2>
+            </div>
+          )}
           <VolumeControl
             className='mr2 flex flex-center flex-row'
             buttonClassName="flex-none h2 button button-transparent button-grow rounded"

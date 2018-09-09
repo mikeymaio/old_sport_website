@@ -27,7 +27,7 @@ export default class Playlist extends Component {
           .props
           .tracks
           .map(track => {
-            return (<ListItem track={track} onSelectTrack={this.props.onSelectTrack}/>)
+            return (<ListItem track={track} onSelectTrack={this.props.onSelectTrack} />)
           })}
       </div>
     )
