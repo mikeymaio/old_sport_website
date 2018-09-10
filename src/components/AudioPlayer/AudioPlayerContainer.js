@@ -63,15 +63,19 @@ class AudioPlayerContainer extends Component {
     }
   }
 
+  onDuration = duration => {
+    // Slider should only update if not seeking
+    // if (!this.state.seeking) {
+      this.setState(duration)
+    // }
+  }
+
   onVolumeChange(volume) {
     this.setState({ volume });
-    console.log(volume);
-    console.log(this.state.volume);
   }
 
   toggleMute() {
     this.setState({ isMuted: !this.state.isMuted });
-    console.log(this.state.isMuted);
   }
 
   render() {
@@ -88,7 +92,8 @@ class AudioPlayerContainer extends Component {
         // width: ' 70%',
         // padding: 100,
         backgroundColor: 'rgba(0,0,0,0.7)'
-      }}>
+      }}
+      >
         <div className="bg-black absolute top-0 right-0 left-0 bottom-0 muted" />
         <div
           className="center py4 relative z1"
@@ -124,7 +129,7 @@ class AudioPlayerContainer extends Component {
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
-          padding: '0 25px 0 25px',
+          padding: '0 10px',
         }}>
           <AudioPlayer
             track={this.props.streamUrl}
@@ -132,9 +137,20 @@ class AudioPlayerContainer extends Component {
             handleStartStop={this.props.handleStartStop}
             isMuted={this.state.isMuted}
             volume={this.state.volume}
+            onProgress={this.onProgress}
+            onDuration={this.onDuration}
           />
         </div>
-        <Playlist tracks={this.props.tracks} onSelectTrack={this.props.onSelectTrack}/>
+        <Playlist
+          tracks={this.props.tracks}
+          selectedTrack={this.props.selectedTrack}
+          onSelectTrack={this.props.onSelectTrack}
+          playing={this.props.playing}
+          handleStartStop={this.props.handleStartStop}
+          state={this.state}
+          duration={this.state.duration}
+          initHorizontalScroll={this.props.initHorizontalScroll}
+        />
       </div>
     );
   }

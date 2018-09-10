@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import TourList from './TourList';
 import 'react-tabs/style/react-tabs.css';
-import $ from 'jquery'
+
 export default class TourSlide extends Component {
     state = {
       upcomingEvents: [],
@@ -14,7 +14,6 @@ export default class TourSlide extends Component {
       return response.json();
     })
     .then((resJson) => {
-      console.log(resJson.resultsPage);
       const data = resJson.resultsPage.results.event
       this.setState({ upcomingEvents: data });
     });
@@ -24,50 +23,9 @@ export default class TourSlide extends Component {
       return response.json();
     })
     .then((resJson) => {
-      console.log(resJson.resultsPage);
       const data = resJson.resultsPage.results.event
-      console.log(resJson.resultsPage.results.event)
       this.setState({ pastEvents: data.reverse() });
     });
-  }
-
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps.slideIndex)
-    if (nextProps.slideIndex === 4) {
-      this.list.addEventListener('DOMMouseScroll', this.preventScrollPropagation)
-      this.list.addEventListener('mousewheel', this.preventScrollPropagation)
-      this.list.addEventListener('mouseover', this.preventScrollPropagation)
-
-      this.list.addEventListener('keydown', this.preventScrollPropagation)
-      this.list.addEventListener('mouseover', e => {
-        $(this.list).focus();
-        this.preventScrollPropagation(e)
-      })
-      this.list.addEventListener('mouseout', e => {
-        $(this.list).blur();
-      })
-    } else {
-      this.list.removeEventListener('DOMMouseScroll', this.preventScrollPropagation)
-      this.list.removeEventListener('mousewheel', this.preventScrollPropagation)
-      this.list.removeEventListener('mouseover', this.preventScrollPropagation)
-
-      this.list.removeEventListener('keydown', this.preventScrollPropagation)
-      this.list.removeEventListener('mouseover', this.preventScrollPropagation)
-    }
-  }
-
-  preventScrollPropagation(e) {
-    const prevent = () => {
-      e.stopPropagation()
-      // e.preventDefault()
-      e.returnValue = false
-      return false
-    }
-
-    e.stopPropagation()
-
-    // prevent()
-
   }
 
   render() {
@@ -78,7 +36,7 @@ export default class TourSlide extends Component {
           <div className="slide__letter slide--4__letter">
             TOUR
           </div>
-          <div className="slide__text slide__text--1" ref={node => this.list = node}>
+          <div className="slide__text slide__text--1">
             <Tabs>
               <TabList>
                 <Tab className="tab__header">UPCOMING</Tab>
@@ -86,10 +44,20 @@ export default class TourSlide extends Component {
               </TabList>
 
               <TabPanel>
-                <TourList gigs={this.state.upcomingEvents} slideIndex={this.props.slideIndex} listIndex={1} />
+                <TourList
+                  gigs={this.state.upcomingEvents}
+                  slideIndex={this.props.slideIndex}
+                  listIndex={1}
+                  initHorizontalScroll={this.props.initHorizontalScroll}
+                />
               </TabPanel>
               <TabPanel>
-                <TourList gigs={this.state.pastEvents} slideIndex={this.props.slideIndex} listIndex={2} />
+                <TourList
+                  gigs={this.state.pastEvents}
+                  slideIndex={this.props.slideIndex}
+                  listIndex={2}
+                  initHorizontalScroll={this.props.initHorizontalScroll}
+                />
               </TabPanel>
             </Tabs>
 
