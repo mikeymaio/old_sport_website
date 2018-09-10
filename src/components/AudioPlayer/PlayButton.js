@@ -50,18 +50,4 @@ class PlayButton extends Component {
   }
 }
 
-// PlayButton.propTypes = {
-//   className: PropTypes.string,
-//   seeking: PropTypes.bool,
-//   playing: PropTypes.bool,
-//   onTogglePlay: PropTypes.func,
-//   seekingIcon: PropTypes.node,
-//   soundCloudAudio: PropTypes.instanceOf(SoundCloudAudio)
-// };
-
-// PlayButton.defaultProps = {
-//   playing: false,
-//   seeking: false
-// };
-
 export default PlayButton;

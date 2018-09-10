@@ -59,21 +59,32 @@ export default class MusicSlide extends Component {
                 height="56"
                 scrolling="no"
                 frameBorder="0"
-                style={{
-                  border:'none',
-                  overflow:'hidden',
-                  alignSelf: 'center',
-                  marginLeft: 20,
-                  width: '30%',
-                }}
+                className="spotify__artist"
                 allowtransparency="true"
               />
-              <a href="https://itunes.apple.com/us/artist/oldsport/1063747050" target="_blank" style={{ width: '30%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src={require('../../assets/available-itunes-logo.png')} style={{ width: '100%' }} />
-              </a>
-              <a href="https://www.amazon.com/gp/search/ref=sr_adv_m_digital/?search-alias=digital-music&unfiltered=1&field-keywords=&field-author=OLD_SPORT&field-title=&field-label=&field-browse=&sort=relevancerank&Adv-Srch-MP3-Submit.x=46&Adv-Srch-MP3-Submit.y=9" target="_blank" style={{ width: '30%', justifyContent: 'center', alignItems: 'center', padding: 20 }}>
-                <img src={require('../../assets/amazon-logo_white.jpg')} style={{ width: '100%' }} />
-              </a>
+                <a
+                  href="https://itunes.apple.com/us/artist/oldsport/1063747050"
+                  target="_blank"
+                  style={{
+                    width: '30%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                  }}
+                >
+                  <img src={require('../../assets/available-itunes-logo.png')} style={{ width: '100%' }} />
+                </a>
+                <a
+                  href="https://www.amazon.com/gp/search/ref=sr_adv_m_digital/?search-alias=digital-music&unfiltered=1&field-keywords=&field-author=OLD_SPORT&field-title=&field-label=&field-browse=&sort=relevancerank&Adv-Srch-MP3-Submit.x=46&Adv-Srch-MP3-Submit.y=9" target="_blank"
+                  style={{
+                    width: '30%',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: 20
+                  }}
+                >
+                  <img src={require('../../assets/amazon-logo_white.jpg')} style={{ width: '100%' }} />
+                </a>
             </div>
           </div>
         </div>

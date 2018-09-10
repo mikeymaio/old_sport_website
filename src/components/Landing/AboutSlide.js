@@ -23,7 +23,7 @@ export default class AboutSlide extends Component {
                 </div>
                 <div className="section__content__wrapper">
                   <p className="section__content">
-                  OLD_SPORT is a 5-piece soul rock band based out of L.A. with roots to NYC. Formed to create the soundtrack for the award winning independent film ELSEWHERE, they have since played all over the east and west coasts headlining such legendary clubs as The Troubadour in L.A. and The Mercury Lounge in Manhattan. They are on the heals of a second successful east coast tour and are currently in the studio recording their debut album with Steve Kille of Dead Meadow. Influences include Spoon, The Strokes, Elvis Costello, Arcade Fire and The E Street Band.
+                  OLD_SPORT is a five piece soul-rock band out of Los Angeles, California. Formed to create the soundtrack for the award-winning independent film ELSEWHERE, they have since headlined legendary clubs on both coasts, including The Troubadour in L.A. and The Mercury Lounge in Manhattan. They are on the heels of a second successful east coast tour and are currently in the studio recording their debut album with Steve Kille of Dead Meadow. Influences include Spoon, The Strokes, Elvis Costello, Arcade Fire and The E Street Band.
                   </p>
                 </div>
               </div>

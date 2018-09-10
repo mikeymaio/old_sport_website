@@ -64,10 +64,7 @@ class AudioPlayerContainer extends Component {
   }
 
   onDuration = duration => {
-    // Slider should only update if not seeking
-    // if (!this.state.seeking) {
-      this.setState(duration)
-    // }
+    this.setState(duration)
   }
 
   onVolumeChange(volume) {
@@ -103,7 +100,7 @@ class AudioPlayerContainer extends Component {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          paddingTop: 50,
+          paddingTop: 35,
         }}>
           { this.props.selectedTrack && (
             <div style={{ textAlign: 'center' }}>
@@ -111,7 +108,7 @@ class AudioPlayerContainer extends Component {
               <h2 className="h0 nowrap caps m0">{this.props.selectedTrack.title}</h2>
             </div>
           )}
-          <VolumeControl
+          {/* <VolumeControl
             className='mr2 flex flex-center flex-row'
             buttonClassName="flex-none h2 button button-transparent button-grow rounded"
             rangeClassName="custom-track-bg"
@@ -119,7 +116,8 @@ class AudioPlayerContainer extends Component {
             volume={this.state.volume}
             onVolumeChange={this.onVolumeChange}
             toggleMute={this.toggleMute}
-            {...this.props}/>
+            {...this.props}
+          /> */}
         </div>
         <div
           className="flex flex-center px2 relative z1"

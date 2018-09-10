@@ -1133,11 +1133,21 @@ span {
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding-left: 15px; }
+  .music-slide__artist-links__container .spotify__artist {
+    border: 'none';
+    align-self: center;
+    margin-left: 20;
+    width: 50%; }
 
 @media (min-width: 768px) {
   .music-slide__artist-links__container {
-    width: 70%; } }
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between; }
+    .music-slide__artist-links__container .spotify__artist {
+      width: 30%; } }
 
 @media (min-width: 500px) {
   .sm-hide {

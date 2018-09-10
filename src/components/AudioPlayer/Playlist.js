@@ -31,7 +31,7 @@ const ListItem = props => (
           height: '100%',
           width: '100%',
           position: 'absolute',
-          backgroundColor: 'rgba(0,0,0,0.25)'
+          backgroundColor: 'rgba(0,0,0,0.35)'
         }}
       />
       <ProgressCircle
@@ -62,13 +62,13 @@ const ListItem = props => (
     </div>
     <div style={{ flex: 1, display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', padding: '5px 0' }} onClick={e => e.stopPropagation()}>
       <a href={props.track.spotifyUrl} target="_blank">
-        <img src={require('../../assets/spotify-logo-small.png')} style={{ width: 40, height: 40, marginRight: 10  }} />
+        <img src={require('../../assets/spotify-logo-small.png')} style={{ width: 30, height: 30, marginRight: 10  }} />
       </a>
       <a href={props.track.itunesUrl} target="_blank">
-        <img src={require('../../assets/itunes-button.png')} style={{ width: 50, height: 50, marginRight: 10  }} />
+        <img src={require('../../assets/itunes-button.png')} style={{ width: 35, height: 35, marginRight: 10  }} />
       </a>
       <a href={props.track.amazonUrl} target="_blank">
-        <img src={require('../../assets/amazon-logo-small.png')} style={{ width: 40, height: 40, marginRight: 10  }} />
+        <img src={require('../../assets/amazon-logo-small.png')} style={{ width: 35, height: 35, marginRight: 10  }} />
       </a>
     </div>
   </div>
