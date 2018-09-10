@@ -14,7 +14,6 @@ export default class TourSlide extends Component {
       return response.json();
     })
     .then((resJson) => {
-      console.log(resJson.resultsPage);
       const data = resJson.resultsPage.results.event
       this.setState({ upcomingEvents: data });
     });
@@ -24,9 +23,7 @@ export default class TourSlide extends Component {
       return response.json();
     })
     .then((resJson) => {
-      console.log(resJson.resultsPage);
       const data = resJson.resultsPage.results.event
-      console.log(resJson.resultsPage.results.event)
       this.setState({ pastEvents: data.reverse() });
     });
   }
@@ -47,10 +44,20 @@ export default class TourSlide extends Component {
               </TabList>
 
               <TabPanel>
-                <TourList gigs={this.state.upcomingEvents} />
+                <TourList
+                  gigs={this.state.upcomingEvents}
+                  slideIndex={this.props.slideIndex}
+                  listIndex={1}
+                  initHorizontalScroll={this.props.initHorizontalScroll}
+                />
               </TabPanel>
               <TabPanel>
-                <TourList gigs={this.state.pastEvents} />
+                <TourList
+                  gigs={this.state.pastEvents}
+                  slideIndex={this.props.slideIndex}
+                  listIndex={2}
+                  initHorizontalScroll={this.props.initHorizontalScroll}
+                />
               </TabPanel>
             </Tabs>
 

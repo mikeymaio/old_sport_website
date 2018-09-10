@@ -20,7 +20,7 @@ export default class TourListItem extends Component {
       </div>
       <div className="Rtable-cell replay-link-cell">
         <div className="Rtable-cell--heading">Tickets</div>
-        <div><a className="ticket__link" href={gig.uri} target="_blank">{gig.uri.length > 12 ? `${gig.uri.match(/.{1,11}/g)[1]}...` : gig.uri}</a></div>
+        <div><a className="ticket__link" href={gig.uri} target="_blank">{gig.uri.length > 17 ? `${gig.uri.match(/.{1,17}/g)[1]}...` : gig.uri}</a></div>
       </div>
     </div>
     )

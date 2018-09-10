@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box; }
 
+.react-tabs {
+  height: 70vh; }
+
 ul.react-tabs__tab-list {
   display: flex;
   flex-direction: row;
@@ -18,25 +21,25 @@ ul.react-tabs__tab-list {
   display: flex;
   justify-content: center; }
 
-.wrapper {
-  max-width: 1000px;
+.tour-list__wrapper {
+  max-width: 80vw;
   padding: 10px;
-  height: 70vh;
+  max-height: 70vh;
   overflow: auto; }
-  .wrapper div {
+  .tour-list__wrapper div {
     font-size: 14px !important;
     text-transform: none !important;
     letter-spacing: 1px !important;
     text-shadow: none;
     font-weight: 500; }
-  .wrapper .ticket__link {
+  .tour-list__wrapper .ticket__link {
     font-size: 14px;
     color: white;
     text-shadow: none;
     letter-spacing: 1px;
     text-decoration: underline;
     word-break: break-word; }
-  .wrapper .venue__link {
+  .tour-list__wrapper .venue__link {
     font-size: 14px !important;
     text-transform: none !important;
     letter-spacing: 1px !important;
@@ -106,6 +109,8 @@ span {
 /* Responsive
 ==================================== */
 @media all and (max-width: 750px) {
+  .tour-list__wrapper {
+    max-width: '100%'; }
   ul.react-tabs__tab-list .tab__header {
     font-size: 14px; }
   .is-striped {
@@ -130,7 +135,8 @@ span {
       .Rtable--collapse .Rtable-row .Rtable-cell {
         width: 100% !important;
         display: flex;
-        align-items: center; }
+        align-items: center;
+        justify-content: flex-start; }
         .Rtable--collapse .Rtable-row .Rtable-cell .Rtable-cell--heading {
           display: inline-block;
           flex: 1;

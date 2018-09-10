@@ -13,159 +13,143 @@ export default class Landing3 extends Component {
     super(props);
     this.state = {
       toggleMenu: false,
-      curSlide: 0,
+      slideIndex: 1,
+      animSpd: 1000, // Change also in CSS
+      diff: 0,
+      animation: false,
+      numSlides: 5,
+      $slider: $('.slider'),
     }
-    // this.handleClick = this
-    //   .handleClick
-    //   .bind(this);
+
+    this.init = this.init.bind(this);
+    this.timeout = this.timeout.bind(this);
+    this.bullets = this.bullets.bind(this)
+    this.navigateLeft = this.navigateLeft.bind(this);
+    this.navigateRight = this.navigateRight.bind(this);
+    this.handleNav = this.handleNav.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
 
   }
 
   componentDidMount() {
-    // $(document).ready(function() {
-    const $cont = $('.cont');
-    const $slider = $('.slider');
-    const $nav = $('.nav');
-    const winW = $(window).width();
-    const animSpd = 1000; // Change also in CSS
-    const distOfLetGo = winW * 0.2;
-    let curSlide = 1;
-    let animation = false;
-    let diff = 0;
+    window.addEventListener('keydown', this.handleKeyDown);
+    window.addEventListener('mousewheel', this.handleScroll);
+    window.addEventListener('DOMMouseScroll', this.handleScroll);
 
-    // Generating slides
-    let slides = [
-      {
-        title: 'OLDSPORT',
-        content: 'OLDSPORT'
-      }, {
-        title: 'BIO',
-        content: 'OUR BIO...'
-      }, {
-        title: 'MUSIC',
-        content: 'MUSIC'
-      }, {
-        title: 'TOUR',
-        content: 'Tour Dates Coming Soon...'
-      }, {
-        title: 'CONTACT',
-        content: 'Email Us'
-      }
-    ]; // Change number of slides in CSS also
-    let numSlides = slides.length;
+    this.init();
+  }
 
-    function bullets(dir) {
-      $('.nav__slide--' + curSlide).removeClass('nav-active');
-      $('.nav__slide--' + dir).addClass('nav-active');
-    }
+  init() {
+    if (this.slider) {
+      const self = this;
 
-    function timeout() {
-      animation = false;
-    }
+    // $(document).on('mousewheel DOMMouseScroll', function (e) {
+    //   if (self.state.animation)
+    //     return;
+    //   let delta = e.originalEvent.wheelDelta;
 
-    function pagination(direction) {
-      animation = true;
-      diff = 0;
-      $slider.addClass('animation');
-      $slider.css({
-        'transform': 'translate3d( -' + ((curSlide - direction) * 100) + '%, 0, 0)'
-      });
-
-      $slider
-        .find('.slide__darkbg')
-        .css({
-          'transform': 'translate3d(' + ((curSlide - direction) * 50) + '%, 0, 0)'
-        });
-
-      $slider
-        .find('.slide__letter')
-        .css({'transform': 'translate3d(0, 0, 0)'});
-
-      $slider
-        .find('.slide__text')
-        .css({'transform': 'translate3d(0, 0, 0)'});
-    }
-
-    function navigateRight() {
-      if (curSlide >= numSlides)
-        return;
-      pagination(0);
-      setTimeout(timeout, animSpd);
-      bullets(curSlide + 1);
-      curSlide++;
-      // this.setState({ curSlide })
-    }
-
-    function navigateLeft() {
-      if (curSlide <= 1)
-        return;
-      pagination(2);
-      setTimeout(timeout, animSpd);
-      bullets(curSlide - 1);
-      curSlide--;
-      // this.setState({ curSlide })
-    }
-
-    function toDefault() {
-      pagination(1);
-      setTimeout(timeout, animSpd);
-    }
-
-    $(document)
-      .on('click', '.nav__slide:not(.nav-active)', function () {
-        let target = +$(this).attr('data-target');
-        bullets(target);
-        curSlide = target;
-        pagination(1);
-      });
-
-    $(document).on('click', '.header__slide:not(.nav-active)', function () {
-      let target = +$(this).attr('data-target');
-      bullets(target);
-      curSlide = target;
-      pagination(1);
-    });
-
-    $(document).on('click', '.side-nav', function () {
-      let target = $(this).attr('data-target');
-
-      if (target === 'right') 
-        navigateRight();
-      if (target === 'left') 
-        navigateLeft();
-      }
-    );
-
-    $(document).on('keydown', function (e) {
-      if (e.which === 39) 
-        navigateRight();
-      if (e.which === 37) 
-        navigateLeft();
-      }
-    );
-
-    $(document).on('mousewheel DOMMouseScroll', function (e) {
-      if (animation) 
-        return;
-      let delta = e.originalEvent.wheelDelta;
-
-      if (delta > 0 || e.originalEvent.detail < 0) 
-        navigateLeft();
-      if (delta < 0 || e.originalEvent.detail > 0) 
-        navigateRight();
-      }
-    );
+    //   if (delta > 0 || e.originalEvent.detail < 0)
+    //     self.navigateLeft();
+    //   if (delta < 0 || e.originalEvent.detail > 0)
+    //     self.navigateRight();
+    //   }
+    // )
 
     const slider = document.getElementById('slide__container');
 
-    handleSwipe(slider, navigateLeft, navigateRight);
+    handleSwipe(slider, this.navigateLeft, this.navigateRight);
+      }
   }
 
   handleClick() {
-    console.log(this.state.toggleMenu);
     this.setState({
       toggleMenu: !this.state.toggleMenu
     });
+  }
+
+  bullets(dir) {
+    const index = this.state.slideIndex
+    $('.nav__slide--' + index).removeClass('nav-active');
+    $('.nav__slide--' + dir).addClass('nav-active');
+  }
+
+  timeout() {
+    this.setState({ animation: false });
+  }
+
+  pagination(direction, slideIndex = this.state.slideIndex) {
+    const $slider = $('.slider');
+    this.setState({ animation: true, diff: 0 });
+    $slider.addClass('animation');
+    $slider.css({
+      'transform': 'translate3d( -' + ((slideIndex - direction) * 100) + '%, 0, 0)'
+    });
+
+    $slider
+      .find('.slide__darkbg')
+      .css({
+        'transform': 'translate3d(' + ((slideIndex - direction) * 50) + '%, 0, 0)'
+      });
+
+    $slider
+      .find('.slide__letter')
+      .css({'transform': 'translate3d(0, 0, 0)'});
+
+    $slider
+      .find('.slide__text')
+      .css({'transform': 'translate3d(0, 0, 0)'});
+  }
+
+  navigateRight() {
+    if (this.state.slideIndex >= this.state.numSlides)
+      return;
+    this.pagination(0);
+    setTimeout(this.timeout, this.state.animSpd);
+    this.bullets(this.state.slideIndex + 1);
+    this.setState({ slideIndex: this.state.slideIndex += 1 });
+  }
+
+  navigateLeft() {
+    if (this.state.slideIndex <= 1)
+      return;
+    this.pagination(2);
+    setTimeout(this.timeout, this.state.animSpd);
+    this.bullets(this.state.slideIndex - 1);
+    this.setState({ slideIndex: this.state.slideIndex -= 1 });
+  }
+
+  toDefault() {
+    this.pagination(1);
+    setTimeout(this.timeout, this.state.animSpd);
+  }
+
+  handleNav(slideIndex) {
+    this.bullets(slideIndex);
+    this.setState({ slideIndex });
+    this.pagination(1, slideIndex);
+  }
+
+  handleKeyDown(e) {
+    if (e.which === 39 || e.which === 40) {
+      this.navigateRight();
+    }
+    if (e.which === 37 || e.which === 38) {
+      this.navigateLeft();
+    }
+  }
+
+  handleScroll(e) {
+    if (this.state.animation) {
+      return;
+    }
+    let delta = e.originalEvent.wheelDelta;
+    if (delta > 0 || e.originalEvent.detail < 0) {
+      this.navigateLeft();
+    }
+    if (delta < 0 || e.originalEvent.detail > 0) {
+      this.navigateRight();
+    }
   }
 
   render() {
@@ -176,32 +160,46 @@ export default class Landing3 extends Component {
       : slideClass = 'slideInRight';
     return (
       <div className="main-container">
-        <Header/>
+        <Header handleNav={this.handleNav} />
         <div className="cont" id="slide__container">
-          <div className="slider">
-            <IntroSlide />
-            <AboutSlide />
-            <MusicSlide />
-            <TourSlide />
-            <ContactSlide />
+          <div
+            className="slider"
+            tabIndex="0"
+            ref={node => this.slider = node}
+          >
+            <IntroSlide slideIndex={this.state.slideIndex} />
+            <AboutSlide slideIndex={this.state.slideIndex} />
+            <MusicSlide slideIndex={this.state.slideIndex} initHorizontalScroll={this.init} />
+            <TourSlide slideIndex={this.state.slideIndex} initHorizontalScroll={this.init} />
+            <ContactSlide slideIndex={this.state.slideIndex} />
           </div>
           <ul className="nav">
-            <li data-target="1" className="nav__slide nav__slide--1 nav-active"></li>
-            <li data-target="2" className="nav__slide nav__slide--2"></li>
-            <li data-target="3" className="nav__slide nav__slide--3"></li>
-            <li data-target="4" className="nav__slide nav__slide--4"></li>
-            <li data-target="5" className="nav__slide nav__slide--5"></li>
+            <li className="nav__slide nav__slide--1 nav-active"
+            onClick={() => this.handleNav(1)}>
+            </li>
+            <li className="nav__slide nav__slide--2"
+            onClick={() => this.handleNav(2)}>
+            </li>
+            <li className="nav__slide nav__slide--3"
+            onClick={() => this.handleNav(3)}>
+            </li>
+            <li className="nav__slide nav__slide--4"
+            onClick={() => this.handleNav(4)}>
+            </li>
+            <li className="nav__slide nav__slide--5"
+            onClick={() => this.handleNav(5)}>
+            </li>
           </ul>
-          {/* {this.state.curSlide !== 5 && ( */}
-          <div data-target="right" className="side-nav side-nav--right">
-            <span className="fa fa-chevron-right"></span>
-          </div>
-          {/* )} */}
-          {/* {this.state.curSlide !== 0 && ( */}
-          <div data-target="left" className="side-nav side-nav--left">
-            <span className="fa fa-chevron-left"></span>
-          </div>
-          {/* )} */}
+          { this.state.slideIndex !== 1 && (
+            <div className="side-nav side-nav--left" onClick={this.navigateLeft}>
+              <span className="fa fa-chevron-left"></span>
+            </div>
+          )}
+          { this.state.slideIndex !== 5 && (
+            <div className="side-nav side-nav--right" onClick={this.navigateRight}>
+              <span className="fa fa-chevron-right"></span>
+            </div>
+          )}
         </div>
       </div>
     )

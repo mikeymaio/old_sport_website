@@ -61,11 +61,12 @@ class AudioPlayer extends React.Component {
       this.setState(state)
     }
     this.setState({played: state.played, playedSeconds: state.playedSeconds})
+    this.props.onProgress(state);
   }
 
   onDuration = (duration) => {
-    console.log('onDuration', duration)
     this.setState({duration})
+    this.props.onDuration({duration})
   }
 
   render() {
@@ -94,7 +95,7 @@ class AudioPlayer extends React.Component {
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'space-around'
         }}>
           <PlayButton
             className="flex-none h2 mr2 button button-transparent button-grow rounded"
@@ -105,7 +106,8 @@ class AudioPlayer extends React.Component {
             duration={duration}
             onSeekChange={this.onSeekChange}
             style={{
-            width: '80%'
+            flex: 1,
+            margin: '0 10px',
           }}
             innerStyle={{
             color: 'black',
@@ -117,7 +119,7 @@ class AudioPlayer extends React.Component {
           <Timer
             style={{
             marginLeft: 10,
-            fontSize: 14
+            fontSize: 12,
           }}
             duration={this.state.duration}
             currentTime={this.player

@@ -1,0 +1,26 @@
+@media (min-width: 500px) {
+  .sm-hide {
+    display: none; } }
+
+@media (min-width: 1025px) {
+  .md-hide {
+    display: none; } }
+
+@media (min-width: 1025px) {
+  .lg-hide {
+    display: none; } }
+
+@media (min-width: 2000px) {
+  .xl-hide {
+    display: none; } }
+
+.music-slide__artist-links__container {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+@media (min-width: 768px) {
+  .music-slide__artist-links__container {
+    width: 70%; } }

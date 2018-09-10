@@ -66,8 +66,8 @@ body {
 
   -webkit-animation: pulse 3s infinite ease-in-out;
     -o-animation: pulse 3s infinite ease-in-out;
-    -ms-animation: pulse 3s infinite ease-in-out; 
-    -moz-animation: pulse 3s infinite ease-in-out; 
+    -ms-animation: pulse 3s infinite ease-in-out;
+    -moz-animation: pulse 3s infinite ease-in-out;
     animation: pulse 3s infinite ease-in-out;
 }
 
@@ -81,6 +81,10 @@ h2.section__header {
     flex: 1;
     justify-content: center;
     align-items: center;
+}
+
+.tour-list {
+  overflow: scroll;
 }
 
 p.section__content {
