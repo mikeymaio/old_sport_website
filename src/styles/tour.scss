@@ -184,6 +184,7 @@ span {
         width: 100% !important;
         display: flex;
         align-items: center;
+        justify-content: flex-start;
 
         .Rtable-cell--heading {
           display: inline-block;

@@ -135,7 +135,8 @@ span {
       .Rtable--collapse .Rtable-row .Rtable-cell {
         width: 100% !important;
         display: flex;
-        align-items: center; }
+        align-items: center;
+        justify-content: flex-start; }
         .Rtable--collapse .Rtable-row .Rtable-cell .Rtable-cell--heading {
           display: inline-block;
           flex: 1;

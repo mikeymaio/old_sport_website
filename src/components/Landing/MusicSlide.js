@@ -53,7 +53,7 @@ export default class MusicSlide extends Component {
               initHorizontalScroll={this.props.initHorizontalScroll}
             />
 
-            <div style={{width: '70%', backgroundColor: 'rgba(0,0,0,0.7)', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+            <div className="music-slide__artist-links__container">
               <iframe
                 src="https://open.spotify.com/follow/1/?uri=spotify:artist:7vymsKsxaBuqW9idxrQUOE&size=detail&theme=dark&show-count=0" width="300"
                 height="56"
