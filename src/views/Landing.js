@@ -42,24 +42,9 @@ export default class Landing3 extends Component {
 
   init() {
     if (this.slider) {
-      const self = this;
-
-    // $(document).on('mousewheel DOMMouseScroll', function (e) {
-    //   if (self.state.animation)
-    //     return;
-    //   let delta = e.originalEvent.wheelDelta;
-
-    //   if (delta > 0 || e.originalEvent.detail < 0)
-    //     self.navigateLeft();
-    //   if (delta < 0 || e.originalEvent.detail > 0)
-    //     self.navigateRight();
-    //   }
-    // )
-
-    const slider = document.getElementById('slide__container');
-
-    handleSwipe(slider, this.navigateLeft, this.navigateRight);
-      }
+      const slider = document.getElementById('slide__container');
+      handleSwipe(slider, this.navigateLeft, this.navigateRight);
+    }
   }
 
   handleClick() {
@@ -127,14 +112,15 @@ export default class Landing3 extends Component {
   handleNav(slideIndex) {
     this.bullets(slideIndex);
     this.setState({ slideIndex });
+    setTimeout(this.timeout, this.state.animSpd);
     this.pagination(1, slideIndex);
   }
 
   handleKeyDown(e) {
-    if (e.which === 39 || e.which === 40) {
+    if (e.which === 39 || e.which === 40 || (e.which === 32 && !e.shiftKey)) {
       this.navigateRight();
     }
-    if (e.which === 37 || e.which === 38) {
+    if (e.which === 37 || e.which === 38 || (e.which === 32 && e.shiftKey)) {
       this.navigateLeft();
     }
   }
@@ -143,11 +129,11 @@ export default class Landing3 extends Component {
     if (this.state.animation) {
       return;
     }
-    let delta = e.originalEvent.wheelDelta;
-    if (delta > 0 || e.originalEvent.detail < 0) {
+    let delta = e.wheelDelta;
+    if (delta > 0 || e.detail < 0) {
       this.navigateLeft();
     }
-    if (delta < 0 || e.originalEvent.detail > 0) {
+    if (delta < 0 || e.detail > 0) {
       this.navigateRight();
     }
   }

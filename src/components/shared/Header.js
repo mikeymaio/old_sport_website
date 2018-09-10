@@ -46,7 +46,7 @@ export default class Header extends Component {
             </li>
           </ul>
         </Drawer>
-        <ul className="header2__menu" style={{ alignItems: 'center' }} >
+        <ul className="header2__menu" style={{ alignItems: 'center' }}>
             <li className="header__slide nav__slide--1 nav-active" onClick={() => this.props.handleNav(1)}>
               <div
                 style={{
