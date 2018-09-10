@@ -72,7 +72,7 @@ export default class MusicSlide extends Component {
                     alignItems: 'center'
                   }}
                 >
-                  <img src={require('../../assets/available-itunes-logo.png')} style={{ width: '100%' }} />
+                  <img src={require('../../assets/available-itunes-logo.png')} style={{ width: '100%', maxWidth: 150 }} />
                 </a>
                 <a
                   href="https://www.amazon.com/gp/search/ref=sr_adv_m_digital/?search-alias=digital-music&unfiltered=1&field-keywords=&field-author=OLD_SPORT&field-title=&field-label=&field-browse=&sort=relevancerank&Adv-Srch-MP3-Submit.x=46&Adv-Srch-MP3-Submit.y=9" target="_blank"
@@ -83,7 +83,7 @@ export default class MusicSlide extends Component {
                     padding: 20
                   }}
                 >
-                  <img src={require('../../assets/amazon-logo_white.jpg')} style={{ width: '100%' }} />
+                  <img src={require('../../assets/amazon-logo_white.jpg')} style={{ width: '100%', maxWidth: 125, minWidth: 60 }} />
                 </a>
             </div>
           </div>
