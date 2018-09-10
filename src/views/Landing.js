@@ -8,7 +8,7 @@ import MusicSlide from '../components/Landing/MusicSlide';
 import TourSlide from '../components/Landing/Tour/TourSlide';
 import ContactSlide from '../components/Landing/ContactSlide';
 
-export default class Landing3 extends Component {
+export default class Landing extends Component {
   constructor(props) {
     super(props);
     this.state = {
