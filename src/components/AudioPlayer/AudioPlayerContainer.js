@@ -1,9 +1,4 @@
 import React, {Component} from 'react';
-import ReactPlayer from 'react-player';
-import PropTypes from 'prop-types';
-import PlayButton from './PlayButton'
-import Progress from './Progress'
-import VolumeControl from './VolumeControl'
 import AudioPlayer from './AudioPlayer';
 import Playlist from './Playlist'
 

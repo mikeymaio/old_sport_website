@@ -38,7 +38,7 @@ export default class TourList extends Component {
     if (this.props.gigs) {
       const classname = 'Rtable-row'
       return (
-        this.props.gigs.map((gig, index) => <TourListItem gig={gig} className={index % 2 === 0 ? 'Rtable-row is-striped' : 'Rtable-row'} />)
+        this.props.gigs.map((gig, index) => <TourListItem gig={gig} className={index % 2 === 0 ? 'Rtable-row is-striped' : 'Rtable-row'} key={gig.uri} />)
       )
     }
     return (
