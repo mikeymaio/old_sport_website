@@ -221,18 +221,26 @@ ul.social-icons {
   margin-top: 10px;
 }
 .social-icons li {
-  vertical-align: top;
-  display: inline;
   height: 100px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
 }
 .social-icons a {
   color: #fff;
   text-decoration: none;
-  margin-right: 5px;
+  width: 100%;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 .fa {
   font-size: 20px;
   border-radius: 3px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .fa-facebook {
   padding: 10px 14px;
@@ -437,7 +445,7 @@ $bgPics: (
 		width: 100%;
 		height: 100%;
 		transform: translate3d(0, 0, 0);
-		-webkit-text-fill-color: rgba(0,0,0,0.1) !important;
+    -webkit-text-fill-color: rgba(250,250,250,0.2);
 		-webkit-background-clip: text !important;
 		font: {
 			size: 50vw;
@@ -509,6 +517,11 @@ $bgPics: (
         background-size: contain;
 			}
     }
+    &--1 {
+      &__letter {
+        -webkit-text-fill-color: rgba(250,250,250,0.8) !important;
+      }
+    }
     &--2 {
       &__letter {
         -webkit-text-fill-color: rgba(0,0,0,0.85) !important;
@@ -552,7 +565,7 @@ $bgPics: (
 
 .nav {
 	position: absolute;
-	bottom: 25px;
+	bottom: 50px;
 	left: 50%;
 	transform: translateX(-50%);
 	list-style-type: none;

@@ -7,6 +7,7 @@ import AboutSlide from '../components/Landing/AboutSlide';
 import MusicSlide from '../components/Landing/MusicSlide';
 import TourSlide from '../components/Landing/Tour/TourSlide';
 import ContactSlide from '../components/Landing/ContactSlide';
+import Social from '../components/Social';
 
 export default class Landing extends Component {
   constructor(props) {
@@ -187,6 +188,7 @@ export default class Landing extends Component {
             </div>
           )}
         </div>
+        <Social />
       </div>
     )
   }

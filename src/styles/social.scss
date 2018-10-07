@@ -1,0 +1,40 @@
+.social {
+  &__container {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    max-width: 100vw;
+  }
+  &-icon__list {
+    display: flex;
+    flex-direction: row;
+    max-width: 100vw;
+    li {
+      height: 45px;
+      width: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 5px;
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .fa {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

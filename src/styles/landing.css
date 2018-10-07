@@ -223,18 +223,24 @@ ul.social-icons {
   margin-top: 10px; }
 
 .social-icons li {
-  vertical-align: top;
-  display: inline;
-  height: 100px; }
+  height: 100px;
+  width: 50px;
+  display: flex;
+  justify-content: center; }
 
 .social-icons a {
   color: #fff;
   text-decoration: none;
-  margin-right: 5px; }
+  width: 100%; }
+  .social-icons a:hover {
+    text-decoration: none; }
 
 .fa {
   font-size: 20px;
-  border-radius: 3px; }
+  border-radius: 3px;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
 
 .fa-facebook {
   padding: 10px 14px;
@@ -384,7 +390,7 @@ ul.social-icons {
     width: 100%;
     height: 100%;
     transform: translate3d(0, 0, 0);
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.1) !important;
+    -webkit-text-fill-color: rgba(250, 250, 250, 0.2);
     -webkit-background-clip: text !important;
     font-size: 50vw;
     font-weight: 800;
@@ -434,6 +440,8 @@ ul.social-icons {
     background: url("../assets/Old_Sport_38.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
+  .slide--1__letter {
+    -webkit-text-fill-color: rgba(250, 250, 250, 0.8) !important; }
   .slide--2__letter {
     -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
@@ -472,6 +480,8 @@ ul.social-icons {
     background: url("../assets/Old_Sport_19.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
+  .slide--1__letter {
+    -webkit-text-fill-color: rgba(250, 250, 250, 0.8) !important; }
   .slide--2__letter {
     -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
@@ -510,6 +520,8 @@ ul.social-icons {
     background: url("../assets/Old_Sport_32.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
+  .slide--1__letter {
+    -webkit-text-fill-color: rgba(250, 250, 250, 0.8) !important; }
   .slide--2__letter {
     -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
@@ -548,6 +560,8 @@ ul.social-icons {
     background: url("../assets/_DSC3855.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
+  .slide--1__letter {
+    -webkit-text-fill-color: rgba(250, 250, 250, 0.8) !important; }
   .slide--2__letter {
     -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
@@ -586,6 +600,8 @@ ul.social-icons {
     background: url("../assets/Old_Sport_14.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
+  .slide--1__letter {
+    -webkit-text-fill-color: rgba(250, 250, 250, 0.8) !important; }
   .slide--2__letter {
     -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
@@ -614,7 +630,7 @@ ul.social-icons {
 
 .nav {
   position: absolute;
-  bottom: 25px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   list-style-type: none;
