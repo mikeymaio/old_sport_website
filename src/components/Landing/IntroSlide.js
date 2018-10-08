@@ -19,7 +19,7 @@ export default class IntroSlide extends Component {
 
   renderLanding() {
     const browser = this.checkBrowser();
-    if (browser === 'Safari' || browser === 'IE') {
+    if (browser === 'IE') {
       return (
         <div data-target="1" className="slide slide--1">
           <div className="banner__fallback"></div>
@@ -33,7 +33,7 @@ export default class IntroSlide extends Component {
           <div
             className="slide__letter slide--1__letter"
             style={{
-            fontSize: '25vw',
+            fontSize: '22vw',
             textAlign: 'center'
           }}>
             OLD SPORT

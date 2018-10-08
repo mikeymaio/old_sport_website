@@ -441,17 +441,19 @@ ul.social-icons {
     background: url("../assets/Old_Sport_38.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
+  .slide--1__letter {
+    padding-top: calc(100vh / 2 - 26vw); }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
   .slide--3__letter {
-    padding-top: 21vh; }
+    padding-top: calc(100vh / 2 - 15vw); }
   .slide--4__letter {
     font-size: 30vw;
-    padding-top: 22vh; }
+    padding-top: calc(100vh / 2 - 15vw); }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
   .slide--5__letter {
-    padding-top: 30vh; }
+    padding-top: calc(100vh / 2 - 10vw); }
   .slide--5__darkbg {
     background-size: contain;
     background-position: center; }
@@ -482,17 +484,19 @@ ul.social-icons {
     background: url("../assets/Old_Sport_19.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
+  .slide--1__letter {
+    padding-top: calc(100vh / 2 - 26vw); }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
   .slide--3__letter {
-    padding-top: 21vh; }
+    padding-top: calc(100vh / 2 - 15vw); }
   .slide--4__letter {
     font-size: 30vw;
-    padding-top: 22vh; }
+    padding-top: calc(100vh / 2 - 15vw); }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
   .slide--5__letter {
-    padding-top: 30vh; }
+    padding-top: calc(100vh / 2 - 10vw); }
   .slide--5__darkbg {
     background-size: contain;
     background-position: center; }
@@ -523,17 +527,19 @@ ul.social-icons {
     background: url("../assets/Old_Sport_32.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
+  .slide--1__letter {
+    padding-top: calc(100vh / 2 - 26vw); }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
   .slide--3__letter {
-    padding-top: 21vh; }
+    padding-top: calc(100vh / 2 - 15vw); }
   .slide--4__letter {
     font-size: 30vw;
-    padding-top: 22vh; }
+    padding-top: calc(100vh / 2 - 15vw); }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
   .slide--5__letter {
-    padding-top: 30vh; }
+    padding-top: calc(100vh / 2 - 10vw); }
   .slide--5__darkbg {
     background-size: contain;
     background-position: center; }
@@ -564,17 +570,19 @@ ul.social-icons {
     background: url("../assets/_DSC3855.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
+  .slide--1__letter {
+    padding-top: calc(100vh / 2 - 26vw); }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
   .slide--3__letter {
-    padding-top: 21vh; }
+    padding-top: calc(100vh / 2 - 15vw); }
   .slide--4__letter {
     font-size: 30vw;
-    padding-top: 22vh; }
+    padding-top: calc(100vh / 2 - 15vw); }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
   .slide--5__letter {
-    padding-top: 30vh; }
+    padding-top: calc(100vh / 2 - 10vw); }
   .slide--5__darkbg {
     background-size: contain;
     background-position: center; }
@@ -605,17 +613,19 @@ ul.social-icons {
     background: url("../assets/Old_Sport_14.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
+  .slide--1__letter {
+    padding-top: calc(100vh / 2 - 26vw); }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
   .slide--3__letter {
-    padding-top: 21vh; }
+    padding-top: calc(100vh / 2 - 15vw); }
   .slide--4__letter {
     font-size: 30vw;
-    padding-top: 22vh; }
+    padding-top: calc(100vh / 2 - 15vw); }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
   .slide--5__letter {
-    padding-top: 30vh; }
+    padding-top: calc(100vh / 2 - 10vw); }
   .slide--5__darkbg {
     background-size: contain;
     background-position: center; }

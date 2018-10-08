@@ -12,7 +12,7 @@ export default class AboutSlide extends Component {
             BIO
           </div>
         </div> */}
-          <div className="about__container" style={{ position: 'absolute', zIndex: 100, top: 20}}>
+          <div className="about__container" style={{ position: 'absolute', zIndex: 100, top: 20 }}>
             <div>
               <div className="bio-card">
                 <div className="slide__text slide__text--2">
