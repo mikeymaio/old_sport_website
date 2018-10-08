@@ -437,15 +437,16 @@ $bgPics: (
 	
 	&__letter {
 		position: absolute;
-		display: flex;
+		display: inline;
 		align-items: center;
-		justify-content: center;
+    justify-content: center;
+    text-align: center;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		transform: translate3d(0, 0, 0);
-    -webkit-text-fill-color: rgba(250,250,250,0.2);
+    -webkit-text-fill-color: transparent;
 		-webkit-background-clip: text !important;
 		font: {
 			size: 50vw;
@@ -517,33 +518,34 @@ $bgPics: (
         background-size: contain;
 			}
     }
-    &--1 {
-      &__letter {
-        -webkit-text-fill-color: rgba(250,250,250,0.8) !important;
+    &--3 {
+      &__darkbg:after {
+        background-color: rgba(250, 250, 250, 0.1);
       }
-    }
-    &--2 {
       &__letter {
-        -webkit-text-fill-color: rgba(0,0,0,0.85) !important;
+        padding-top: 21vh;
       }
-    }
-    &--3__darkbg:after {
-      background-color: rgba(250, 250, 250, 0.1);
     }
     &--4 {
       &__letter {
         font-size: 30vw;
+        padding-top: 22vh;
       }
       &__darkbg:after {
         background-color: rgba(250, 250, 250, 0.15);
       }
     }
-    &--5__darkbg {
-      background-size: contain;
-      background-position: center;
-      &:after {
-        background-color: transparent;
-        background-color: rgba(75, 75, 75, 0.35);
+    &--5 {
+      &__letter {
+        padding-top: 30vh;
+      }
+      &__darkbg {
+        background-size: contain;
+        background-position: center;
+        &:after {
+          background-color: transparent;
+          background-color: rgba(75, 75, 75, 0.35);
+        }
       }
     }
     &--5__letter {

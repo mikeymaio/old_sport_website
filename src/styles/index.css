@@ -575,15 +575,16 @@ ul.social-icons {
     z-index: 15; }
   .slide__letter {
     position: absolute;
-    display: flex;
+    display: inline;
     align-items: center;
     justify-content: center;
+    text-align: center;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     transform: translate3d(0, 0, 0);
-    -webkit-text-fill-color: rgba(250, 250, 250, 0.2);
+    -webkit-text-fill-color: transparent;
     -webkit-background-clip: text !important;
     font-size: 50vw;
     font-weight: 800;
@@ -633,16 +634,17 @@ ul.social-icons {
     background: url("../assets/Old_Sport_38.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
-  .slide--1__letter {
-    -webkit-text-fill-color: rgba(250, 250, 250, 0.8) !important; }
-  .slide--2__letter {
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
+  .slide--3__letter {
+    padding-top: 21vh; }
   .slide--4__letter {
-    font-size: 30vw; }
+    font-size: 30vw;
+    padding-top: 22vh; }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
+  .slide--5__letter {
+    padding-top: 30vh; }
   .slide--5__darkbg {
     background-size: contain;
     background-position: center; }
@@ -673,16 +675,17 @@ ul.social-icons {
     background: url("../assets/Old_Sport_19.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
-  .slide--1__letter {
-    -webkit-text-fill-color: rgba(250, 250, 250, 0.8) !important; }
-  .slide--2__letter {
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
+  .slide--3__letter {
+    padding-top: 21vh; }
   .slide--4__letter {
-    font-size: 30vw; }
+    font-size: 30vw;
+    padding-top: 22vh; }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
+  .slide--5__letter {
+    padding-top: 30vh; }
   .slide--5__darkbg {
     background-size: contain;
     background-position: center; }
@@ -713,16 +716,17 @@ ul.social-icons {
     background: url("../assets/Old_Sport_32.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
-  .slide--1__letter {
-    -webkit-text-fill-color: rgba(250, 250, 250, 0.8) !important; }
-  .slide--2__letter {
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
+  .slide--3__letter {
+    padding-top: 21vh; }
   .slide--4__letter {
-    font-size: 30vw; }
+    font-size: 30vw;
+    padding-top: 22vh; }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
+  .slide--5__letter {
+    padding-top: 30vh; }
   .slide--5__darkbg {
     background-size: contain;
     background-position: center; }
@@ -753,16 +757,17 @@ ul.social-icons {
     background: url("../assets/_DSC3855.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
-  .slide--1__letter {
-    -webkit-text-fill-color: rgba(250, 250, 250, 0.8) !important; }
-  .slide--2__letter {
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
+  .slide--3__letter {
+    padding-top: 21vh; }
   .slide--4__letter {
-    font-size: 30vw; }
+    font-size: 30vw;
+    padding-top: 22vh; }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
+  .slide--5__letter {
+    padding-top: 30vh; }
   .slide--5__darkbg {
     background-size: contain;
     background-position: center; }
@@ -793,16 +798,17 @@ ul.social-icons {
     background: url("../assets/Old_Sport_14.jpg") center center no-repeat;
     background-position: center;
     background-size: contain; }
-  .slide--1__letter {
-    -webkit-text-fill-color: rgba(250, 250, 250, 0.8) !important; }
-  .slide--2__letter {
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important; }
   .slide--3__darkbg:after {
     background-color: rgba(250, 250, 250, 0.1); }
+  .slide--3__letter {
+    padding-top: 21vh; }
   .slide--4__letter {
-    font-size: 30vw; }
+    font-size: 30vw;
+    padding-top: 22vh; }
   .slide--4__darkbg:after {
     background-color: rgba(250, 250, 250, 0.15); }
+  .slide--5__letter {
+    padding-top: 30vh; }
   .slide--5__darkbg {
     background-size: contain;
     background-position: center; }
