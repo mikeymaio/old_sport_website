@@ -329,7 +329,7 @@ ul.social-icons {
 .cont {
   position: relative;
   height: 100vh;
-  overflow-x: hidden; }
+  overflow: hidden; }
 
 .slider {
   position: relative;

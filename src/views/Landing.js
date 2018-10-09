@@ -161,7 +161,7 @@ export default class Landing extends Component {
             <ContactSlide slideIndex={this.state.slideIndex} />
           </div>
           <ul className="nav">
-            <li className="nav__slide nav__slide--1 nav-active"
+            <li className={"nav__slide nav__slide--1 nav-active"}
             onClick={() => this.handleNav(1)}>
             </li>
             <li className="nav__slide nav__slide--2"

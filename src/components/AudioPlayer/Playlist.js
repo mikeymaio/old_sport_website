@@ -39,7 +39,7 @@ const ListItem = props => (
         sqSize="40"
         percentage={props.playing ? (props.state.playedSeconds / props.state.duration) * 100 : 0}
       >
-      <div style={{position: 'absolute', bottom: 10, left: props.playing ? 7 : 9}}>
+      <div style={{position: 'absolute', bottom: 12, left: props.playing ? 8 : 10}}>
       <PlayButton
         className="flex-none h2 mr2 button button-transparent button-grow rounded"
         {...props}
