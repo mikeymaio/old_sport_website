@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
-import $ from 'jquery';
 import Header from '../components/shared/Header';
-import handleSwipe from '../swipe';
 import IntroSlide from '../components/Landing/IntroSlide';
 import AboutSlide from '../components/Landing/AboutSlide';
 import MusicSlide from '../components/Landing/MusicSlide';
 import TourSlide from '../components/Landing/Tour/TourSlide';
 import ContactSlide from '../components/Landing/ContactSlide';
 import Social from '../components/Social';
-import Swiper from 'swiper';
+import Swiper from '../packages/swiper-dist/js/swiper.esm.bundle';
 
 export default class Landing extends Component {
   constructor(props) {
@@ -17,10 +15,8 @@ export default class Landing extends Component {
       toggleMenu: false,
       slideIndex: 0,
       animSpd: 1000, // Change also in CSS
-      diff: 0,
       animation: false,
       numSlides: 5,
-      $slider: $('.slider'),
     }
     this.handleNav = this.handleNav.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
