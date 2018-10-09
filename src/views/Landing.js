@@ -7,28 +7,26 @@ import AboutSlide from '../components/Landing/AboutSlide';
 import MusicSlide from '../components/Landing/MusicSlide';
 import TourSlide from '../components/Landing/Tour/TourSlide';
 import ContactSlide from '../components/Landing/ContactSlide';
+import Social from '../components/Social';
+import Swiper from 'swiper';
 
 export default class Landing extends Component {
   constructor(props) {
     super(props);
     this.state = {
       toggleMenu: false,
-      slideIndex: 1,
+      slideIndex: 0,
       animSpd: 1000, // Change also in CSS
       diff: 0,
       animation: false,
       numSlides: 5,
       $slider: $('.slider'),
     }
-
-    this.init = this.init.bind(this);
-    this.timeout = this.timeout.bind(this);
-    this.bullets = this.bullets.bind(this)
-    this.navigateLeft = this.navigateLeft.bind(this);
-    this.navigateRight = this.navigateRight.bind(this);
     this.handleNav = this.handleNav.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
+
+    this.initSwiper = this.initSwiper.bind(this);
 
   }
 
@@ -37,91 +35,20 @@ export default class Landing extends Component {
     window.addEventListener('mousewheel', this.handleScroll);
     window.addEventListener('DOMMouseScroll', this.handleScroll);
 
-    this.init();
+    this.initSwiper();
   }
 
-  init() {
-    if (this.slider) {
-      const slider = document.getElementById('slide__container');
-      handleSwipe(slider, this.navigateLeft, this.navigateRight);
-    }
-  }
 
-  handleClick() {
-    this.setState({
-      toggleMenu: !this.state.toggleMenu
-    });
-  }
-
-  bullets(dir) {
-    const index = this.state.slideIndex
-    $('.nav__slide--' + index).removeClass('nav-active');
-    $('.nav__slide--' + dir).addClass('nav-active');
-  }
-
-  timeout() {
-    this.setState({ animation: false });
-  }
-
-  pagination(direction, slideIndex = this.state.slideIndex) {
-    const $slider = $('.slider');
-    this.setState({ animation: true, diff: 0 });
-    $slider.addClass('animation');
-    $slider.css({
-      'transform': 'translate3d( -' + ((slideIndex - direction) * 100) + '%, 0, 0)'
-    });
-
-    $slider
-      .find('.slide__darkbg')
-      .css({
-        'transform': 'translate3d(' + ((slideIndex - direction) * 50) + '%, 0, 0)'
-      });
-
-    $slider
-      .find('.slide__letter')
-      .css({'transform': 'translate3d(0, 0, 0)'});
-
-    $slider
-      .find('.slide__text')
-      .css({'transform': 'translate3d(0, 0, 0)'});
-  }
-
-  navigateRight() {
-    if (this.state.slideIndex >= this.state.numSlides)
-      return;
-    this.pagination(0);
-    setTimeout(this.timeout, this.state.animSpd);
-    this.bullets(this.state.slideIndex + 1);
-    this.setState({ slideIndex: this.state.slideIndex += 1 });
-  }
-
-  navigateLeft() {
-    if (this.state.slideIndex <= 1)
-      return;
-    this.pagination(2);
-    setTimeout(this.timeout, this.state.animSpd);
-    this.bullets(this.state.slideIndex - 1);
-    this.setState({ slideIndex: this.state.slideIndex -= 1 });
-  }
-
-  toDefault() {
-    this.pagination(1);
-    setTimeout(this.timeout, this.state.animSpd);
-  }
-
-  handleNav(slideIndex) {
-    this.bullets(slideIndex);
-    this.setState({ slideIndex });
-    setTimeout(this.timeout, this.state.animSpd);
-    this.pagination(1, slideIndex);
+  handleNav(index) {
+    this.swiper.slideTo(index, 1000);
   }
 
   handleKeyDown(e) {
     if (e.which === 39 || e.which === 40 || (e.which === 32 && !e.shiftKey)) {
-      this.navigateRight();
+      this.swiper.slideNext(1000);
     }
     if (e.which === 37 || e.which === 38 || (e.which === 32 && e.shiftKey)) {
-      this.navigateLeft();
+      this.swiper.slidePrev(1000);
     }
   }
 
@@ -131,11 +58,103 @@ export default class Landing extends Component {
     }
     let delta = e.wheelDelta;
     if (delta > 0 || e.detail < 0) {
-      this.navigateLeft();
+      this.swiper.slidePrev(1000);
     }
     if (delta < 0 || e.detail > 0) {
-      this.navigateRight();
+      this.swiper.slideNext(1000);
     }
+  }
+
+  initSwiper() {
+    const self = this;
+    // Params
+    let mainSliderSelector = '.main-slider',
+    navSliderSelector = '.nav-slider',
+    interleaveOffset = 0.5;
+
+    // Main Slider
+    let mainSliderOptions = {
+      // loop: true,
+      speed:1000,
+      autoplay: {
+        delay:5000
+      },
+      // loopAdditionalSlides: 10,
+      grabCursor: true,
+      watchSlidesProgress: true,
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
+      on: {
+        init: function(){
+          this.autoplay.stop();
+        },
+        imagesReady: function(){
+          this.el.classList.remove('loading');
+          this.autoplay.start();
+        },
+        slideChange: function(){
+          self.setState({ slideIndex: self.swiper.activeIndex })
+        },
+        slideChangeTransitionEnd: function(){
+          let swiper = this,
+              captions = swiper.el.querySelectorAll('.caption');
+          for (let i = 0; i < captions.length; ++i) {
+            captions[i].classList.remove('show');
+          }
+          swiper.slides[swiper.activeIndex].querySelector('.caption').classList.add('show');
+        },
+        progress: function(){
+          let swiper = this;
+          for (let i = 0; i < swiper.slides.length; i++) {
+            let slideProgress = swiper.slides[i].progress,
+                innerOffset = swiper.width * interleaveOffset,
+                innerTranslate = slideProgress * innerOffset;
+            swiper.slides[i].querySelector(".slide-bgimg").style.transform =
+              "translate3d(" + innerTranslate + "px, 0, 0)";
+          }
+        },
+        touchStart: function() {
+          let swiper = this;
+          for (let i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = "";
+          }
+        },
+        setTransition: function(speed) {
+          let swiper = this;
+          for (let i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = speed + "ms";
+            swiper.slides[i].querySelector(".slide-bgimg").style.transition =
+              speed + "ms";
+          }
+        },
+      }
+    };
+    let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
+
+    this.swiper = mainSlider;
+
+    // Navigation Slider
+    // let navSliderOptions = {
+    //   // loop: true,
+    //   loopAdditionalSlides: 10,
+    //   speed:1000,
+    //   spaceBetween: 5,
+    //   slidesPerView: 5,
+    //   centeredSlides : true,
+    //   touchRatio: 0.2,
+    //   slideToClickedSlide: true,
+    //   direction: 'horizontal',
+    //   on: {
+    //     imagesReady: function(){
+    //       this.el.classList.remove('loading');
+    //     },
+    //     click: function(){
+    //       mainSlider.autoplay.stop();
+    //     },
+    //   }
+    // };
   }
 
   render() {
@@ -147,47 +166,73 @@ export default class Landing extends Component {
     return (
       <div className="main-container">
         <Header handleNav={this.handleNav} />
-        <div className="cont" id="slide__container">
-          <div
-            className="slider"
-            tabIndex="0"
-            ref={node => this.slider = node}
-          >
-            <IntroSlide slideIndex={this.state.slideIndex} />
-            <AboutSlide slideIndex={this.state.slideIndex} />
-            <MusicSlide slideIndex={this.state.slideIndex} initHorizontalScroll={this.init} />
-            <TourSlide slideIndex={this.state.slideIndex} initHorizontalScroll={this.init} />
-            <ContactSlide slideIndex={this.state.slideIndex} />
+
+        <div className="swiper-container main-slider loading">
+          <div className="swiper-wrapper">
+          <div className="swiper-slide">
+              <figure className="slide-bgimg slide-bgimg--1" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_38.jpg?alt=media&token=0f4efe73-eb0f-4261-9137-cd9962e0379a)' }}>
+                <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_38.jpg?alt=media&token=0f4efe73-eb0f-4261-9137-cd9962e0379a" className="entity-img" />
+              </figure>
+              <div className="content">
+                <IntroSlide />
+              </div>
+            </div>
+            <div className="swiper-slide">
+              <figure className="slide-bgimg slide-bgimg--2" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_19.jpg?alt=media&token=c1dda655-8629-4310-9871-47daf1e61237)' }}>
+                <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_19.jpg?alt=media&token=c1dda655-8629-4310-9871-47daf1e61237" className="entity-img" />
+              </figure>
+              <div className="content">
+                <AboutSlide />
+              </div>
+            </div>
+            <div className="swiper-slide">
+              <figure className="slide-bgimg slide-bgimg--3" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_32.jpg?alt=media&token=982cc7b8-cbb9-49e6-8dea-2bbf9799c171)' }}>
+                <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_32.jpg?alt=media&token=982cc7b8-cbb9-49e6-8dea-2bbf9799c171" className="entity-img" />
+              </figure>
+              <div className="content">
+                <MusicSlide />
+              </div>
+            </div>
+            <div className="swiper-slide">
+            <figure className="slide-bgimg slide-bgimg--4" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2F_DSC3855.jpg?alt=media&token=00a6f37e-ffbc-4560-966d-2e621c0d0c2f)' }}>
+                <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2F_DSC3855.jpg?alt=media&token=00a6f37e-ffbc-4560-966d-2e621c0d0c2f" className="entity-img" />
+              </figure>
+              <div className="content">
+                <TourSlide />
+              </div>
+            </div>
+            <div className="swiper-slide">
+              <figure className="slide-bgimg slide-bgimg--5" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_14.jpg?alt=media&token=8201f525-c11f-4975-a8fd-2ba5edb864e2)' }}>
+                <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_14.jpg?alt=media&token=8201f525-c11f-4975-a8fd-2ba5edb864e2" className="entity-img" />
+              </figure>
+              <div className="content">
+                <ContactSlide />
+              </div>
+            </div>
           </div>
           <ul className="nav">
-            <li className="nav__slide nav__slide--1 nav-active"
+            <li className={`nav__slide nav__slide--1 ${this.state.slideIndex === 0 ? 'nav-active' : ''}`}
+            onClick={() => this.handleNav(0)}>
+            </li>
+            <li className={`nav__slide nav__slide--2 ${this.state.slideIndex === 1 ? 'nav-active' : ''}`}
             onClick={() => this.handleNav(1)}>
             </li>
-            <li className="nav__slide nav__slide--2"
+            <li className={`nav__slide nav__slide--3 ${this.state.slideIndex === 2 ? 'nav-active' : ''}`}
             onClick={() => this.handleNav(2)}>
             </li>
-            <li className="nav__slide nav__slide--3"
+            <li className={`nav__slide nav__slide--4 ${this.state.slideIndex === 3 ? 'nav-active' : ''}`}
             onClick={() => this.handleNav(3)}>
             </li>
-            <li className="nav__slide nav__slide--4"
+            <li className={`nav__slide nav__slide--5 ${this.state.slideIndex === 4 ? 'nav-active' : ''}`}
             onClick={() => this.handleNav(4)}>
             </li>
-            <li className="nav__slide nav__slide--5"
-            onClick={() => this.handleNav(5)}>
-            </li>
           </ul>
-          { this.state.slideIndex !== 1 && (
-            <div className="side-nav side-nav--left" onClick={this.navigateLeft}>
-              <span className="fa fa-chevron-left"></span>
-            </div>
-          )}
-          { this.state.slideIndex !== 5 && (
-            <div className="side-nav side-nav--right" onClick={this.navigateRight}>
-              <span className="fa fa-chevron-right"></span>
-            </div>
-          )}
+          {this.state.slideIndex !== 0 && <div className="swiper-button-prev swiper-button-white" onClick={() => this.swiper.slidePrev(1000)} />}
+          {this.state.slideIndex !== 4 && <div className="swiper-button-next swiper-button-white" onClick={() => this.swiper.slideNext(1000)} />}
         </div>
+        <Social />
       </div>
     )
   }
 }
+

@@ -60,6 +60,9 @@ class AudioPlayer extends React.Component {
     if (!this.state.seeking) {
       this.setState(state)
     }
+    if (state.playedSeconds === this.state.duration) {
+      return this.props.handleStartStop();
+    }
     this.setState({played: state.played, playedSeconds: state.playedSeconds})
     this.props.onProgress(state);
   }
@@ -95,7 +98,8 @@ class AudioPlayer extends React.Component {
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          justifyContent: 'space-around'
+          justifyContent: 'space-around',
+          marginBottom: 10,
         }}>
           <PlayButton
             className="flex-none h2 mr2 button button-transparent button-grow rounded"
@@ -112,7 +116,6 @@ class AudioPlayer extends React.Component {
             innerStyle={{
             color: 'black',
             backgroundColor: '#43c6cc'
-            // background: 'linear-gradient(#8f5fff, #000)',
           }}
             onMouseDown={this.onSeekMouseDown}
             onMouseUp={this.onSeekMouseUp}/>

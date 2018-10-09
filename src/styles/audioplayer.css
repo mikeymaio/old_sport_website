@@ -258,7 +258,7 @@ input[type=range]::-ms-fill-lower {
   border-radius: 10px; }
 
 .audioplayer__container {
-  width: 100%;
+  width: 90vw;
   height: auto; }
 
 @media (min-width: 768px) {

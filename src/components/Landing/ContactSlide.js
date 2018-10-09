@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 export default class ContactSlide extends Component {
   render() {
     return (
-      <div data-target="5" className="slide slide--5">
+      // <div data-target="5" className="slide slide--5">
+      <div>
         <div
           className="slide__darkbg slide--5__darkbg"
           style={{
@@ -11,13 +12,14 @@ export default class ContactSlide extends Component {
         }}></div>
         <div className="slide__text-wrapper slide--5__text-wrapper">
           <div
-            className="slide__letter slide--5__letter"
+            className="slide__letter slide--5__letter title"
             style={{
             fontSize: '20vw'
           }}>
             CONTACT
           </div>
-          <div id="contact" className="contact__container">
+          {/* <div className="caption" /> */}
+          <div id="contact" className="contact__container caption">
             <div className="contact-card">
               <h2 className="section__header">
                 Contact
