@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ClassNames from 'classnames';
-import SoundCloudAudio from 'soundcloud-audio';
 import { PlayIconSVG, PauseIconSVG } from './Icons';
 
 class PlayButton extends Component {
@@ -14,16 +13,7 @@ class PlayButton extends Component {
   }
 
   handleClick(e) {
-    const { playing, soundCloudAudio, onTogglePlay } = this.props;
-
-    if (!playing) {
-      soundCloudAudio && soundCloudAudio.play({
-        playlistIndex: soundCloudAudio._playlistIndex
-      });
-    } else {
-      soundCloudAudio && soundCloudAudio.pause();
-    }
-
+    const { onTogglePlay } = this.props;
     onTogglePlay && onTogglePlay(e);
   }
 
