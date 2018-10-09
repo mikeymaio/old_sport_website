@@ -72,7 +72,8 @@ body {
   font-family: "Lato", sans-serif;
   background: #000;
   /* fallback for old browsers */
-  cursor: default !important; }
+  cursor: default !important;
+  overflow: hidden; }
 
 .App {
   text-align: center; }
@@ -231,9 +232,6 @@ body {
     opacity: 0.8; } }
 
 body {
-  font-family: "Lato", sans-serif;
-  color: #fff;
-  background: #322f30;
   -webkit-font-smoothing: antialiased; }
 
 .more__info__badge {
@@ -777,7 +775,7 @@ ul.social-icons {
     border-radius: 50%;
     border: 2px solid #fff;
     margin-left: 10px;
-    cursor: pointer; }
+    cursor: default !important; }
     @media screen and (max-width: 400px) {
       .nav__slide {
         width: 22px;
@@ -810,7 +808,7 @@ ul.social-icons {
   height: 100%;
   top: 0;
   z-index: 2;
-  cursor: pointer;
+  cursor: default !important;
   opacity: 0;
   transition: 300ms;
   display: none;
@@ -849,7 +847,7 @@ ul.social-icons {
     width: 20%;
     padding-left: 5px; }
     .swiper-container.nav-slider .swiper-slide {
-      cursor: pointer;
+      cursor: default !important;
       opacity: .4;
       transition: opacity .3s ease; }
       .swiper-container.nav-slider .swiper-slide.swiper-slide-active {

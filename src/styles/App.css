@@ -24,7 +24,8 @@ body {
   font-family: "Lato", sans-serif;
   background: #000;
   /* fallback for old browsers */
-  cursor: default !important; }
+  cursor: default !important;
+  overflow: hidden; }
 
 .App {
   text-align: center; }
