@@ -20,41 +20,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.hero-container {
-  position: relative;
-  width: 100%;
-  // height: 100vh;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-.hero-image {
-  width: 100vw;
-  height: 100%;
-  height: 100vh; // this should be dynamic, right now it's fixed based on a min max offset
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-children {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.banner-image {
-  background: url("../assets/banner.jpg");
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-}
-
 .more__info__badge {
   color: white;
   text-decoration: none;
@@ -148,32 +113,12 @@ p.section__content {
 
 .bio-card {
   width: 100%;
-  padding: 5%;
+  padding: 10%;
   border-radius: 5px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  // background: linear-gradient(to bottom, transparent, transparent 40%, #000 100%);
-}
-
-.photo__img {
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  width: 320px;
-  height: 240px;
-  transform: translateZ(0.25px) scale(0.75) translateX(134%) translateY(20%)
-    rotate(2deg);
-  padding: 10px;
-  border-radius: 5px;
-  background: rgba(240, 230, 220, 0.7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-}
-
-.photo__img:last-of-type {
-  transform: translateZ(0.4px) scale(0.6) translateX(75%) translateY(60%)
-    rotate(-15deg);
 }
 
 a {
@@ -202,11 +147,7 @@ ul {
   padding: 0;
   list-style: none;
 }
-.footer-social-icons {
-  width: 350px;
-  display: block;
-  margin: 0 auto;
-}
+
 .social-icons {
   display: flex;
   flex-direction: row;
@@ -350,7 +291,7 @@ ul.social-icons {
 ////////////// LANDING3.JS /////////////
 
 // $bgClr: rgba(#0b0f27, .83);
-$bgClr: rgba(#000, .75);
+$bgClr: rgba(#000, .5);
 $txtClr: #fff;
 $animSpd: 1000 * 1ms; // Change also in JS
 
@@ -372,48 +313,11 @@ $bgPics: (
 
 .cont {
 	position: relative;
-	height: 100vh;
+  height: 100vh;
   overflow: hidden;
 }
 
-.slider {
-	position: relative;
-	height: 100%;
-	transform: translate3d(0, 0, 0);
-	will-change: transform;
-	cursor: default;
-	user-select: none;
-
-	&.animation {
-		transition: transform $animSpd ease-in-out;
-
-		.slide__darkbg {
-			transition: transform $animSpd ease-in-out;
-		}
-
-		.slide__text {
-			transition: transform $animSpd ease-in-out;
-		}
-
-		.slide__letter {
-			transition: transform $animSpd ease-in-out;
-		}
-	}
-}
-
 .slide {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-
-	@for $i from 1 through $numOfSlides {
-		&--#{$i} {
-			left: 100% * ($i - 1);
-		}
-	}
-
 	&__darkbg {
 		position: absolute;
 		width: 100%;
@@ -426,7 +330,9 @@ $bgPics: (
 	}
 	
 	&__text-wrapper {
-		position: absolute;
+    position: absolute;
+    top: 0;
+    left: 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -449,7 +355,7 @@ $bgPics: (
     -webkit-text-fill-color: transparent;
 		-webkit-background-clip: text !important;
 		font: {
-			size: 50vw;
+			size: 44vw;
 			weight: 800;
 		}
 		color: #000;
@@ -496,10 +402,6 @@ $bgPics: (
 		$i: index($bgPics, $item);
 		&--#{$i} {
 			&__darkbg {
-				left: -50% * ($i - 1);
-				background: $item;
-				background-size: contain;
-				background-position: center;
 				transform: translate3d(0, 0, 0);
 				will-change: transform;
 				&:after {
@@ -523,12 +425,12 @@ $bgPics: (
         padding-top: calc(100vh / 2 - 26vw);
       }
     }
-    // &--2 {
-    //   &__letter {
-    //     // padding-top: calc(100vh / 2 - 25vw);
-    //     -webkit-text-fill-color: rgba(0,0,0,0.3);
-    //   }
-    // }
+    &--2 {
+      &__letter {
+        padding-top: calc(100vh / 2 - 25vw);
+        -webkit-text-fill-color: rgba(0,0,0,0.4);
+      }
+    }
     &--3 {
       &__darkbg:after {
         background-color: rgba(250, 250, 250, 0.1);
@@ -551,19 +453,9 @@ $bgPics: (
         padding-top: calc(100vh / 2 - 10vw);
       }
       &__darkbg {
-        background-size: contain;
-        background-position: center;
         &:after {
-          background-color: transparent;
           background-color: rgba(75, 75, 75, 0.35);
         }
-      }
-    }
-    &--5__letter {
-      background-size: contain;
-      background-position: center;
-      &:after {
-        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/Old_Sport_14.jpg');
       }
     }
 	}
@@ -659,15 +551,124 @@ $bgPics: (
 	}
 }
 
+%transition_all_03s {
+  transition:all .3s ease;
+}
+%backface_visibility_hidden{
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container {
+  width: 100vw;
+  height: 100vh;
+  float:left;
+  transition:opacity .6s ease, transform .3s ease;
+  &.nav-slider{
+    width:20%;
+    padding-left:5px;
+    .swiper-slide{
+      cursor:pointer;
+      opacity:.4;
+      transition:opacity .3s ease;
+      &.swiper-slide-active{
+        opacity:1;
+      }
+      .content{
+        width:100%;
+      }
+    }
+  }
+  &:hover{
+    .swiper-button-prev,
+    .swiper-button-next{
+      transform:translateX(0);
+      opacity:1;
+      visibility:visible;
+    }
+  }
+  &.loading{
+    opacity:0;
+    visibility:hidden;
+  }
+}
+.swiper-wrapper{
+
+}
+.swiper-slide {
+  overflow: hidden;
+  @extend %backface_visibility_hidden;
+  .slide-bgimg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-position:center;
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+  .entity-img{
+    display:none;
+  }
+  .content{
+    position:absolute;
+    top: 0;
+    left:0;
+    width:100vw;
+    height: 100vh;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    .title{
+      font-weight:bold;
+    }
+    .caption{
+      display: flex;
+      font-size:13px;
+      line-height:1.4;
+      transform:translateX(50px);
+      opacity:0;
+      transition:opacity .3s ease, transform .7s ease;
+      &.show{
+        transform:translateX(0);
+        opacity:1;
+      }
+    }
+  }
+}
+[class^="swiper-button-"]{
+  width:44px;
+  opacity:0;
+  visibility:hidden;
+  display: none;
+  @extend %transition_all_03s;
+}
+.swiper-button-prev {
+  transform:translateX(50px);
+}
+.swiper-button-next {
+  transform:translateX(-50px);
+}
+
 
 @include md {
   .music__container {
     padding: 5%;
+    position: relative;
   }
   .bio-card {
     height: 100vh;
     .section__content {
-      font-size: 2vw;
+      font-size: 2vw !important;
       margin: 0;
       padding: 0;
     }
@@ -685,6 +686,9 @@ $bgPics: (
         &__letter {
           background-size: cover;
         }
+      }
+      &__letter {
+        background-size: cover;
       }
       &--4__letter {
         font-size: 30vw;
@@ -706,7 +710,27 @@ $bgPics: (
       }
     }
   }
-  .banner__fallback {
-    background-size: cover
+
+  .swiper-slide {
+    .slide-bgimg {
+      background-size:cover;
+      background-repeat: no-repeat;
+
+      &--5 {
+        background-position: center top;
+      }
+    }
+  }
+
+  [class^="swiper-button-"]{
+    visibility: visible;
+    display: block;
   }
 }
+
+
+
+
+
+
+

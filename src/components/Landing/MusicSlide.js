@@ -32,17 +32,18 @@ export default class MusicSlide extends Component {
 
   render() {
     return (
-      <div data-target="3" className="slide slide--3">
+      // <div data-target="3" className="slide slide--3">
+      <div>
         <div className="slide__darkbg slide--3__darkbg"></div>
         <div className="slide__text-wrapper slide--3__text-wrapper">
           <div
-            className="slide__letter slide--3__letter"
+            className="slide__letter slide--3__letter title"
             style={{
             fontSize: '30vw'
           }}>
             MUSIC
           </div>
-          <div className="music__container">
+          <div className="music__container caption">
             <AudioPlayerContainer
               tracks={this.state.tracks}
               selectedTrack={this.state.selectedTrack}

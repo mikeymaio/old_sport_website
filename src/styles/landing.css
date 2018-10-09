@@ -43,36 +43,6 @@ body {
   background: #322f30;
   -webkit-font-smoothing: antialiased; }
 
-.hero-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden; }
-
-.hero-image {
-  width: 100vw;
-  height: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center; }
-
-.hero-children {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.banner-image {
-  background: url("../assets/banner.jpg");
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center; }
-
 .more__info__badge {
   color: white;
   text-decoration: none;
@@ -156,27 +126,12 @@ p.section__content {
 
 .bio-card {
   width: 100%;
-  padding: 5%;
+  padding: 10%;
   border-radius: 5px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
-
-.photo__img {
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  width: 320px;
-  height: 240px;
-  transform: translateZ(0.25px) scale(0.75) translateX(134%) translateY(20%) rotate(2deg);
-  padding: 10px;
-  border-radius: 5px;
-  background: rgba(240, 230, 220, 0.7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7); }
-
-.photo__img:last-of-type {
-  transform: translateZ(0.4px) scale(0.6) translateX(75%) translateY(60%) rotate(-15deg); }
 
 a {
   text-decoration: none;
@@ -203,11 +158,6 @@ h6 {
 ul {
   padding: 0;
   list-style: none; }
-
-.footer-social-icons {
-  width: 350px;
-  display: block;
-  margin: 0 auto; }
 
 .social-icons {
   display: flex;
@@ -331,312 +281,287 @@ ul.social-icons {
   height: 100vh;
   overflow: hidden; }
 
-.slider {
-  position: relative;
+.slide__darkbg {
+  position: absolute;
+  width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   transform: translate3d(0, 0, 0);
   will-change: transform;
-  cursor: default;
-  user-select: none; }
-  .slider.animation {
-    transition: transform 1000ms ease-in-out; }
-    .slider.animation .slide__darkbg {
-      transition: transform 1000ms ease-in-out; }
-    .slider.animation .slide__text {
-      transition: transform 1000ms ease-in-out; }
-    .slider.animation .slide__letter {
-      transition: transform 1000ms ease-in-out; }
+  z-index: 10; }
 
-.slide {
+.slide__text-wrapper {
   position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 15; }
+
+.slide__letter {
+  position: absolute;
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; }
-  .slide--1 {
-    left: 0%; }
-  .slide--2 {
-    left: 100%; }
-  .slide--3 {
-    left: 200%; }
-  .slide--4 {
-    left: 300%; }
-  .slide--5 {
-    left: 400%; }
-  .slide__darkbg {
+  transform: translate3d(0, 0, 0);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text !important;
+  font-size: 44vw;
+  font-weight: 800;
+  color: #000;
+  z-index: 2;
+  will-change: transform;
+  user-select: none; }
+
+.slide__text {
+  font-size: 8vw;
+  font-weight: 800;
+  text-transform: uppercase;
+  transform: translate3d(0, 0, 0);
+  letter-spacing: 12px;
+  color: #fff;
+  will-change: transform;
+  user-select: none;
+  text-shadow: 2px 2px black;
+  text-align: center; }
+  .slide__text--2 {
+    font-size: 2vw; }
+    .slide__text--2--container {
+      padding: 10px; }
+    .slide__text--2--name {
+      font-size: 5vw;
+      letter-spacing: 25px;
+      margin-top: 10px; }
+
+.slide__text:nth-child(odd) {
+  z-index: 2; }
+
+.slide__text:nth-child(even) {
+  z-index: 2; }
+
+.slide--1__darkbg {
+  transform: translate3d(0, 0, 0);
+  will-change: transform; }
+  .slide--1__darkbg:after {
+    content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    transform: translate3d(0, 0, 0);
-    will-change: transform;
-    z-index: 10; }
-  .slide__text-wrapper {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 100%;
-    z-index: 15; }
-  .slide__letter {
+    background-color: rgba(0, 0, 0, 0.5); }
+
+.slide--1__letter {
+  background: url("../assets/Old_Sport_38.jpg") center center no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+.slide--1__letter {
+  padding-top: calc(100vh / 2 - 26vw); }
+
+.slide--2__letter {
+  padding-top: calc(100vh / 2 - 25vw);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.4); }
+
+.slide--3__darkbg:after {
+  background-color: rgba(250, 250, 250, 0.1); }
+
+.slide--3__letter {
+  padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__letter {
+  font-size: 30vw;
+  padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__darkbg:after {
+  background-color: rgba(250, 250, 250, 0.15); }
+
+.slide--5__letter {
+  padding-top: calc(100vh / 2 - 10vw); }
+
+.slide--5__darkbg:after {
+  background-color: rgba(75, 75, 75, 0.35); }
+
+.slide--2__darkbg {
+  transform: translate3d(0, 0, 0);
+  will-change: transform; }
+  .slide--2__darkbg:after {
+    content: '';
     position: absolute;
-    display: inline;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    transform: translate3d(0, 0, 0);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text !important;
-    font-size: 50vw;
-    font-weight: 800;
-    color: #000;
-    z-index: 2;
-    will-change: transform;
-    user-select: none; }
-  .slide__text {
-    font-size: 8vw;
-    font-weight: 800;
-    text-transform: uppercase;
-    transform: translate3d(0, 0, 0);
-    letter-spacing: 12px;
-    color: #fff;
-    will-change: transform;
-    user-select: none;
-    text-shadow: 2px 2px black;
-    text-align: center; }
-    .slide__text--2 {
-      font-size: 2vw; }
-      .slide__text--2--container {
-        padding: 10px; }
-      .slide__text--2--name {
-        font-size: 5vw;
-        letter-spacing: 25px;
-        margin-top: 10px; }
-  .slide__text:nth-child(odd) {
-    z-index: 2; }
-  .slide__text:nth-child(even) {
-    z-index: 2; }
-  .slide--1__darkbg {
-    left: 0%;
-    background: url("../assets/Old_Sport_38.jpg") center center no-repeat;
-    background-size: contain;
-    background-position: center;
-    transform: translate3d(0, 0, 0);
-    will-change: transform; }
-    .slide--1__darkbg:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.75); }
-  .slide--1__letter {
-    background: url("../assets/Old_Sport_38.jpg") center center no-repeat;
-    background-position: center;
-    background-size: contain; }
-  .slide--1__letter {
-    padding-top: calc(100vh / 2 - 26vw); }
+    background-color: rgba(0, 0, 0, 0.5); }
+
+.slide--2__letter {
+  background: url("../assets/Old_Sport_19.jpg") center center no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+.slide--1__letter {
+  padding-top: calc(100vh / 2 - 26vw); }
+
+.slide--2__letter {
+  padding-top: calc(100vh / 2 - 25vw);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.4); }
+
+.slide--3__darkbg:after {
+  background-color: rgba(250, 250, 250, 0.1); }
+
+.slide--3__letter {
+  padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__letter {
+  font-size: 30vw;
+  padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__darkbg:after {
+  background-color: rgba(250, 250, 250, 0.15); }
+
+.slide--5__letter {
+  padding-top: calc(100vh / 2 - 10vw); }
+
+.slide--5__darkbg:after {
+  background-color: rgba(75, 75, 75, 0.35); }
+
+.slide--3__darkbg {
+  transform: translate3d(0, 0, 0);
+  will-change: transform; }
   .slide--3__darkbg:after {
-    background-color: rgba(250, 250, 250, 0.1); }
-  .slide--3__letter {
-    padding-top: calc(100vh / 2 - 15vw); }
-  .slide--4__letter {
-    font-size: 30vw;
-    padding-top: calc(100vh / 2 - 15vw); }
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+
+.slide--3__letter {
+  background: url("../assets/Old_Sport_32.jpg") center center no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+.slide--1__letter {
+  padding-top: calc(100vh / 2 - 26vw); }
+
+.slide--2__letter {
+  padding-top: calc(100vh / 2 - 25vw);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.4); }
+
+.slide--3__darkbg:after {
+  background-color: rgba(250, 250, 250, 0.1); }
+
+.slide--3__letter {
+  padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__letter {
+  font-size: 30vw;
+  padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__darkbg:after {
+  background-color: rgba(250, 250, 250, 0.15); }
+
+.slide--5__letter {
+  padding-top: calc(100vh / 2 - 10vw); }
+
+.slide--5__darkbg:after {
+  background-color: rgba(75, 75, 75, 0.35); }
+
+.slide--4__darkbg {
+  transform: translate3d(0, 0, 0);
+  will-change: transform; }
   .slide--4__darkbg:after {
-    background-color: rgba(250, 250, 250, 0.15); }
-  .slide--5__letter {
-    padding-top: calc(100vh / 2 - 10vw); }
-  .slide--5__darkbg {
-    background-size: contain;
-    background-position: center; }
-    .slide--5__darkbg:after {
-      background-color: transparent;
-      background-color: rgba(75, 75, 75, 0.35); }
-  .slide--5__letter {
-    background-size: contain;
-    background-position: center; }
-    .slide--5__letter:after {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/Old_Sport_14.jpg"); }
-  .slide--2__darkbg {
-    left: -50%;
-    background: url("../assets/Old_Sport_19.jpg") center center no-repeat;
-    background-size: contain;
-    background-position: center;
-    transform: translate3d(0, 0, 0);
-    will-change: transform; }
-    .slide--2__darkbg:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.75); }
-  .slide--2__letter {
-    background: url("../assets/Old_Sport_19.jpg") center center no-repeat;
-    background-position: center;
-    background-size: contain; }
-  .slide--1__letter {
-    padding-top: calc(100vh / 2 - 26vw); }
-  .slide--3__darkbg:after {
-    background-color: rgba(250, 250, 250, 0.1); }
-  .slide--3__letter {
-    padding-top: calc(100vh / 2 - 15vw); }
-  .slide--4__letter {
-    font-size: 30vw;
-    padding-top: calc(100vh / 2 - 15vw); }
-  .slide--4__darkbg:after {
-    background-color: rgba(250, 250, 250, 0.15); }
-  .slide--5__letter {
-    padding-top: calc(100vh / 2 - 10vw); }
-  .slide--5__darkbg {
-    background-size: contain;
-    background-position: center; }
-    .slide--5__darkbg:after {
-      background-color: transparent;
-      background-color: rgba(75, 75, 75, 0.35); }
-  .slide--5__letter {
-    background-size: contain;
-    background-position: center; }
-    .slide--5__letter:after {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/Old_Sport_14.jpg"); }
-  .slide--3__darkbg {
-    left: -100%;
-    background: url("../assets/Old_Sport_32.jpg") center center no-repeat;
-    background-size: contain;
-    background-position: center;
-    transform: translate3d(0, 0, 0);
-    will-change: transform; }
-    .slide--3__darkbg:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.75); }
-  .slide--3__letter {
-    background: url("../assets/Old_Sport_32.jpg") center center no-repeat;
-    background-position: center;
-    background-size: contain; }
-  .slide--1__letter {
-    padding-top: calc(100vh / 2 - 26vw); }
-  .slide--3__darkbg:after {
-    background-color: rgba(250, 250, 250, 0.1); }
-  .slide--3__letter {
-    padding-top: calc(100vh / 2 - 15vw); }
-  .slide--4__letter {
-    font-size: 30vw;
-    padding-top: calc(100vh / 2 - 15vw); }
-  .slide--4__darkbg:after {
-    background-color: rgba(250, 250, 250, 0.15); }
-  .slide--5__letter {
-    padding-top: calc(100vh / 2 - 10vw); }
-  .slide--5__darkbg {
-    background-size: contain;
-    background-position: center; }
-    .slide--5__darkbg:after {
-      background-color: transparent;
-      background-color: rgba(75, 75, 75, 0.35); }
-  .slide--5__letter {
-    background-size: contain;
-    background-position: center; }
-    .slide--5__letter:after {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/Old_Sport_14.jpg"); }
-  .slide--4__darkbg {
-    left: -150%;
-    background: url("../assets/_DSC3855.jpg") center center no-repeat;
-    background-size: contain;
-    background-position: center;
-    transform: translate3d(0, 0, 0);
-    will-change: transform; }
-    .slide--4__darkbg:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.75); }
-  .slide--4__letter {
-    background: url("../assets/_DSC3855.jpg") center center no-repeat;
-    background-position: center;
-    background-size: contain; }
-  .slide--1__letter {
-    padding-top: calc(100vh / 2 - 26vw); }
-  .slide--3__darkbg:after {
-    background-color: rgba(250, 250, 250, 0.1); }
-  .slide--3__letter {
-    padding-top: calc(100vh / 2 - 15vw); }
-  .slide--4__letter {
-    font-size: 30vw;
-    padding-top: calc(100vh / 2 - 15vw); }
-  .slide--4__darkbg:after {
-    background-color: rgba(250, 250, 250, 0.15); }
-  .slide--5__letter {
-    padding-top: calc(100vh / 2 - 10vw); }
-  .slide--5__darkbg {
-    background-size: contain;
-    background-position: center; }
-    .slide--5__darkbg:after {
-      background-color: transparent;
-      background-color: rgba(75, 75, 75, 0.35); }
-  .slide--5__letter {
-    background-size: contain;
-    background-position: center; }
-    .slide--5__letter:after {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/Old_Sport_14.jpg"); }
-  .slide--5__darkbg {
-    left: -200%;
-    background: url("../assets/Old_Sport_14.jpg") center center no-repeat;
-    background-size: contain;
-    background-position: center;
-    transform: translate3d(0, 0, 0);
-    will-change: transform; }
-    .slide--5__darkbg:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.75); }
-  .slide--5__letter {
-    background: url("../assets/Old_Sport_14.jpg") center center no-repeat;
-    background-position: center;
-    background-size: contain; }
-  .slide--1__letter {
-    padding-top: calc(100vh / 2 - 26vw); }
-  .slide--3__darkbg:after {
-    background-color: rgba(250, 250, 250, 0.1); }
-  .slide--3__letter {
-    padding-top: calc(100vh / 2 - 15vw); }
-  .slide--4__letter {
-    font-size: 30vw;
-    padding-top: calc(100vh / 2 - 15vw); }
-  .slide--4__darkbg:after {
-    background-color: rgba(250, 250, 250, 0.15); }
-  .slide--5__letter {
-    padding-top: calc(100vh / 2 - 10vw); }
-  .slide--5__darkbg {
-    background-size: contain;
-    background-position: center; }
-    .slide--5__darkbg:after {
-      background-color: transparent;
-      background-color: rgba(75, 75, 75, 0.35); }
-  .slide--5__letter {
-    background-size: contain;
-    background-position: center; }
-    .slide--5__letter:after {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/Old_Sport_14.jpg"); }
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+
+.slide--4__letter {
+  background: url("../assets/_DSC3855.jpg") center center no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+.slide--1__letter {
+  padding-top: calc(100vh / 2 - 26vw); }
+
+.slide--2__letter {
+  padding-top: calc(100vh / 2 - 25vw);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.4); }
+
+.slide--3__darkbg:after {
+  background-color: rgba(250, 250, 250, 0.1); }
+
+.slide--3__letter {
+  padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__letter {
+  font-size: 30vw;
+  padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__darkbg:after {
+  background-color: rgba(250, 250, 250, 0.15); }
+
+.slide--5__letter {
+  padding-top: calc(100vh / 2 - 10vw); }
+
+.slide--5__darkbg:after {
+  background-color: rgba(75, 75, 75, 0.35); }
+
+.slide--5__darkbg {
+  transform: translate3d(0, 0, 0);
+  will-change: transform; }
+  .slide--5__darkbg:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+
+.slide--5__letter {
+  background: url("../assets/Old_Sport_14.jpg") center center no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+.slide--1__letter {
+  padding-top: calc(100vh / 2 - 26vw); }
+
+.slide--2__letter {
+  padding-top: calc(100vh / 2 - 25vw);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.4); }
+
+.slide--3__darkbg:after {
+  background-color: rgba(250, 250, 250, 0.1); }
+
+.slide--3__letter {
+  padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__letter {
+  font-size: 30vw;
+  padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__darkbg:after {
+  background-color: rgba(250, 250, 250, 0.15); }
+
+.slide--5__letter {
+  padding-top: calc(100vh / 2 - 10vw); }
+
+.slide--5__darkbg:after {
+  background-color: rgba(75, 75, 75, 0.35); }
 
 .banner__fallback {
   height: 100vh;
@@ -710,13 +635,100 @@ ul.social-icons {
     left: 0;
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #eed7ff 100%); }
 
+[class^="swiper-button-"] {
+  transition: all .3s ease; }
+
+.swiper-slide {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.swiper-container {
+  width: 100vw;
+  height: 100vh;
+  float: left;
+  transition: opacity .6s ease, transform .3s ease; }
+  .swiper-container.nav-slider {
+    width: 20%;
+    padding-left: 5px; }
+    .swiper-container.nav-slider .swiper-slide {
+      cursor: pointer;
+      opacity: .4;
+      transition: opacity .3s ease; }
+      .swiper-container.nav-slider .swiper-slide.swiper-slide-active {
+        opacity: 1; }
+      .swiper-container.nav-slider .swiper-slide .content {
+        width: 100%; }
+  .swiper-container:hover .swiper-button-prev,
+  .swiper-container:hover .swiper-button-next {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible; }
+  .swiper-container.loading {
+    opacity: 0;
+    visibility: hidden; }
+
+.swiper-slide {
+  overflow: hidden; }
+  .swiper-slide .slide-bgimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .swiper-slide .entity-img {
+    display: none; }
+  .swiper-slide .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; }
+    .swiper-slide .content .title {
+      font-weight: bold; }
+    .swiper-slide .content .caption {
+      display: flex;
+      font-size: 13px;
+      line-height: 1.4;
+      transform: translateX(50px);
+      opacity: 0;
+      transition: opacity .3s ease, transform .7s ease; }
+      .swiper-slide .content .caption.show {
+        transform: translateX(0);
+        opacity: 1; }
+
+[class^="swiper-button-"] {
+  width: 44px;
+  opacity: 0;
+  visibility: hidden;
+  display: none; }
+
+.swiper-button-prev {
+  transform: translateX(50px); }
+
+.swiper-button-next {
+  transform: translateX(-50px); }
+
 @media (min-width: 768px) {
   .music__container {
-    padding: 5%; }
+    padding: 5%;
+    position: relative; }
   .bio-card {
     height: 100vh; }
     .bio-card .section__content {
-      font-size: 2vw;
+      font-size: 2vw !important;
       margin: 0;
       padding: 0; }
   .side-nav {
@@ -724,6 +736,8 @@ ul.social-icons {
   .slide--1__darkbg {
     background-size: cover; }
   .slide--1__letter {
+    background-size: cover; }
+  .slide__letter {
     background-size: cover; }
   .slide--4__letter {
     font-size: 30vw; }
@@ -737,6 +751,8 @@ ul.social-icons {
     background-size: cover; }
   .slide--2__letter {
     background-size: cover; }
+  .slide__letter {
+    background-size: cover; }
   .slide--4__letter {
     font-size: 30vw; }
   .slide--5__darkbg {
@@ -748,6 +764,8 @@ ul.social-icons {
   .slide--3__darkbg {
     background-size: cover; }
   .slide--3__letter {
+    background-size: cover; }
+  .slide__letter {
     background-size: cover; }
   .slide--4__letter {
     font-size: 30vw; }
@@ -761,6 +779,8 @@ ul.social-icons {
     background-size: cover; }
   .slide--4__letter {
     background-size: cover; }
+  .slide__letter {
+    background-size: cover; }
   .slide--4__letter {
     font-size: 30vw; }
   .slide--5__darkbg {
@@ -772,6 +792,8 @@ ul.social-icons {
   .slide--5__darkbg {
     background-size: cover; }
   .slide--5__letter {
+    background-size: cover; }
+  .slide__letter {
     background-size: cover; }
   .slide--4__letter {
     font-size: 30vw; }
@@ -783,5 +805,11 @@ ul.social-icons {
     background-position: center top; }
   .slide__text--2--name {
     font-size: 7vw; }
-  .banner__fallback {
-    background-size: cover; } }
+  .swiper-slide .slide-bgimg {
+    background-size: cover;
+    background-repeat: no-repeat; }
+    .swiper-slide .slide-bgimg--5 {
+      background-position: center top; }
+  [class^="swiper-button-"] {
+    visibility: visible;
+    display: block; } }

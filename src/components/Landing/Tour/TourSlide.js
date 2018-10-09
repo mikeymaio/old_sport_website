@@ -30,12 +30,14 @@ export default class TourSlide extends Component {
 
   render() {
     return (
-      <div data-target="4" className="slide slide--4">
+      // <div data-target="4" className="slide slide--4">
+      <div>
         <div className="slide__darkbg slide--4__darkbg"></div>
         <div className="slide__text-wrapper slide--4__text-wrapper">
-          <div className="slide__letter slide--4__letter">
+          <div className="slide__letter slide--4__letter title">
             TOUR
           </div>
+          <div className="caption" />
           <div className="slide__text slide__text--1">
             <Tabs>
               <TabList>
