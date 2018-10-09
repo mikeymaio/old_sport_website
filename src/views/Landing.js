@@ -6,7 +6,7 @@ import MusicSlide from '../components/Landing/MusicSlide';
 import TourSlide from '../components/Landing/Tour/TourSlide';
 import ContactSlide from '../components/Landing/ContactSlide';
 import Social from '../components/Social';
-import Swiper from '../packages/swiper-dist/js/swiper.esm.bundle';
+import Swiper from 'swiper';
 
 export default class Landing extends Component {
   constructor(props) {
