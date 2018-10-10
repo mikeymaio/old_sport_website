@@ -87,16 +87,7 @@ class AudioPlayerContainer extends Component {
       }}
       >
         <div className="bg-black absolute top-0 right-0 left-0 bottom-0 muted" />
-        <div
-          className="center py4 relative z1"
-          style={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          paddingTop: 35,
-        }}>
+        <div className="center py4 relative z1 player__info">
           { this.props.selectedTrack && (
             <div style={{ textAlign: 'center' }}>
               <h3 className="h4 nowrap caps mb0">{this.props.selectedTrack.artist}</h3>

@@ -29,25 +29,25 @@ export default class Header extends Component {
             <span className="fa fa-close"></span>
           </button>
           <ul className="header2__drawer__menu">
-          <li className="header__slide nav__slide--1 nav-active" onClick={() => this.props.handleNav(0)}>
+          <li className="header__slide nav__slide--1 nav-active" onClick={() => this.props.handleNav(1)}>
               <p>Home</p>
             </li>
-            <li className="header__slide nav__slide--2" onClick={() => this.props.handleNav(1)}>
+            <li className="header__slide nav__slide--2" onClick={() => this.props.handleNav(2)}>
               <p>Bio</p>
             </li>
-            <li className="header__slide nav__slide--3" onClick={() => this.props.handleNav(2)}>
+            <li className="header__slide nav__slide--3" onClick={() => this.props.handleNav(3)}>
               <p>Music</p>
             </li>
-            <li className="header__slide nav__slide--4" onClick={() => this.props.handleNav(3)}>
+            <li className="header__slide nav__slide--4" onClick={() => this.props.handleNav(4)}>
               <p>Tour</p>
             </li>
-            <li className="header__slide nav__slide--5" onClick={() => this.props.handleNav(4)}>
+            <li className="header__slide nav__slide--5" onClick={() => this.props.handleNav(5)}>
               <p>Contact</p>
             </li>
           </ul>
         </Drawer>
         <ul className="header2__menu" style={{ alignItems: 'center' }}>
-            <li className="header__slide nav__slide--1 nav-active" onClick={() => this.props.handleNav(0)}>
+            <li className="header__slide nav__slide--1 nav-active" onClick={() => this.props.handleNav(1)}>
               <div
                 style={{
                   height: 60,
@@ -64,16 +64,16 @@ export default class Header extends Component {
                 <img src={require("../../assets/old-sport-logo-white-black.jpg")} alt="OS" style={{ height: '100%', width: '100%' }} />
               </div>
             </li>
-            <li className="header__slide nav__slide--2" onClick={() => this.props.handleNav(1)}>
+            <li className="header__slide nav__slide--2" onClick={() => this.props.handleNav(2)}>
               <a>BIO</a>
             </li>
-            <li className="header__slide nav__slide--3" onClick={() => this.props.handleNav(2)}>
+            <li className="header__slide nav__slide--3" onClick={() => this.props.handleNav(3)}>
               <a>MUSIC</a>
             </li>
-            <li className="header__slide nav__slide--4" onClick={() => this.props.handleNav(3)}>
+            <li className="header__slide nav__slide--4" onClick={() => this.props.handleNav(4)}>
               <a>TOUR</a>
             </li>
-            <li className="header__slide nav__slide--5" onClick={() => this.props.handleNav(4)}>
+            <li className="header__slide nav__slide--5" onClick={() => this.props.handleNav(5)}>
               <a>CONTACT</a>
             </li>
           </ul>

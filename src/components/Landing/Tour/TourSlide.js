@@ -30,41 +30,45 @@ export default class TourSlide extends Component {
 
   render() {
     return (
-      // <div data-target="4" className="slide slide--4">
-      <div>
-        <div className="slide__darkbg slide--4__darkbg"></div>
-        <div className="slide__text-wrapper slide--4__text-wrapper">
-          <div className="slide__letter slide--4__letter title">
-            TOUR
-          </div>
-          <div className="caption" />
-          <div className="slide__text slide__text--1">
-            <Tabs>
-              <TabList>
-                <Tab className="tab__header">UPCOMING</Tab>
-                <Tab className="tab__header">PAST</Tab>
-              </TabList>
+      <div className="swiper-slide">
+        <figure className="slide-bgimg slide-bgimg--4" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2F_DSC3855.jpg?alt=media&token=00a6f37e-ffbc-4560-966d-2e621c0d0c2f)' }}>
+          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2F_DSC3855.jpg?alt=media&token=00a6f37e-ffbc-4560-966d-2e621c0d0c2f" alt="tour" className="entity-img" />
+        </figure>
+        <div className="content">
+          <div className="slide__darkbg slide--4__darkbg"></div>
+          <div className="slide__text-wrapper slide--4__text-wrapper">
+            <div className="slide__letter slide--4__letter title">
+              TOUR
+            </div>
+            <div className="caption" />
+            <div className="slide__text slide__text--1">
+              <Tabs>
+                <TabList>
+                  <Tab className="tab__header">UPCOMING</Tab>
+                  <Tab className="tab__header">PAST</Tab>
+                </TabList>
 
-              <TabPanel>
-                <TourList
-                  gigs={this.state.upcomingEvents}
-                  slideIndex={this.props.slideIndex}
-                  listIndex={1}
-                  initHorizontalScroll={this.props.initHorizontalScroll}
-                />
-              </TabPanel>
-              <TabPanel>
-                <TourList
-                  gigs={this.state.pastEvents}
-                  slideIndex={this.props.slideIndex}
-                  listIndex={2}
-                  initHorizontalScroll={this.props.initHorizontalScroll}
-                />
-              </TabPanel>
-            </Tabs>
+                <TabPanel>
+                  <TourList
+                    gigs={this.state.upcomingEvents}
+                    slideIndex={this.props.slideIndex}
+                    listIndex={1}
+                    initHorizontalScroll={this.props.initHorizontalScroll}
+                  />
+                </TabPanel>
+                <TabPanel>
+                  <TourList
+                    gigs={this.state.pastEvents}
+                    slideIndex={this.props.slideIndex}
+                    listIndex={2}
+                    initHorizontalScroll={this.props.initHorizontalScroll}
+                  />
+                </TabPanel>
+              </Tabs>
 
-            <div className="sk-logo__wrapper">
-              <img src={require('../../../assets/powered-by-sk/powered-by-songkick-white.svg')} style={{width: 100 }}/>
+              <div className="sk-logo__wrapper">
+                <img src={require('../../../assets/powered-by-sk/powered-by-songkick-white.svg')} style={{width: 100 }}/>
+              </div>
             </div>
           </div>
         </div>

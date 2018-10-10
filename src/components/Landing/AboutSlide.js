@@ -4,15 +4,18 @@ import React, { Component } from 'react';
 export default class AboutSlide extends Component {
   render() {
     return (
-      // <div data-target="2" className="slide slide--2">
-      // {/* <div className="slide--2__wrapper"> */}
-      <div>
-        <div className="slide__darkbg slide--2__darkbg"></div>
-        <div className="slide__text-wrapper slide--2__text-wrapper">
-          <div className="slide__letter slide--2__letter title">
-            BIO
+
+      <div className="swiper-slide">
+        <figure className="slide-bgimg slide-bgimg--2" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_19.jpg?alt=media&token=c1dda655-8629-4310-9871-47daf1e61237)' }}>
+          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_19.jpg?alt=media&token=c1dda655-8629-4310-9871-47daf1e61237" alt="about" className="entity-img" />
+        </figure>
+        <div className="content">
+          <div className="slide__darkbg slide--2__darkbg"></div>
+          <div className="slide__text-wrapper slide--2__text-wrapper">
+            <div className="slide__letter slide--2__letter title">
+              BIO
+            </div>
           </div>
-        </div>
           <div className="about__container" style={{ position: 'relative', zIndex: 100, top: 20 }}>
             <div>
               <div className="bio-card">
@@ -30,7 +33,7 @@ export default class AboutSlide extends Component {
               </div>
             </div>
           </div>
-        {/* </div> */}
+        </div>
       </div>
     );
   }

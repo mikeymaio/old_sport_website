@@ -27,20 +27,25 @@ export default class IntroSlide extends Component {
       )
     }
     return (
-      <div>
-        <div className="slide__darkbg slide--1__darkbg"></div>
-        <div className="slide__text-wrapper slide--1__text-wrapper">
-          <div
-            className="slide__letter slide--1__letter title"
-            style={{
-            fontSize: '22vw'
-          }}>
-            OLD SPORT
+      <div className="swiper-slide">
+        <figure className="slide-bgimg slide-bgimg--1" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_38.jpg?alt=media&token=0f4efe73-eb0f-4261-9137-cd9962e0379a)' }}>
+          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_38.jpg?alt=media&token=0f4efe73-eb0f-4261-9137-cd9962e0379a" alt="OLD_SPORT" className="entity-img" />
+        </figure>
+        <div className="content">
+          <div className="slide__darkbg slide--1__darkbg"></div>
+          <div className="slide__text-wrapper slide--1__text-wrapper">
+            <div
+              className="slide__letter slide--1__letter title"
+              style={{
+              fontSize: '22vw'
+            }}>
+              OLD SPORT
+            </div>
+            <div className="caption" />
           </div>
-          <div className="caption" />
         </div>
       </div>
-    )
+    );
   }
   render() {
     return this.renderLanding();
