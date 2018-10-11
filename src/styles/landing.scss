@@ -399,7 +399,7 @@ $bgPics: (
       }
       &--name {
         font-size: 5vw;
-        letter-spacing: 25px;
+        letter-spacing: 15px;
         margin: 10px 0;
       }
     }
@@ -506,7 +506,7 @@ $bgPics: (
 			transform: translate(-50%, -50%) scale(1,1);
 			opacity: 1;
 		}
-		
+
 		&:after {
 			content: '';
 			position: absolute;
