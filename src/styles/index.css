@@ -454,30 +454,6 @@ ul.social-icons {
 .fa-youtube:hover {
   background-color: #e64a41; }
 
-.fa-linkedin {
-  padding: 10px 14px;
-  -o-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  background-color: #322f30; }
-
-.fa-linkedin:hover {
-  background-color: #0073a4; }
-
-.fa-google-plus {
-  padding: 10px 9px;
-  -o-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  background-color: #322f30; }
-
-.fa-google-plus:hover {
-  background-color: #e25714; }
-
 .cont {
   position: relative;
   height: 100vh;
@@ -1828,3 +1804,11 @@ p {
       justify-content: center;
       align-items: center;
       font-size: 18px; }
+    .social-icon__list li .fa-facebook {
+      background-color: #3d5b99; }
+    .social-icon__list li .fa-instagram {
+      background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%); }
+    .social-icon__list li .fa-twitter {
+      background-color: #00aced; }
+    .social-icon__list li .fa-youtube {
+      background-color: #e64a41; }
