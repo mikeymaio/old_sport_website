@@ -50,7 +50,9 @@
     color: #FFFFFF;
     outline: none;
     border: none;
-    margin-left: 20px;
+    padding: 5px 20px;
+    align-self: flex-end;
+    font-size: 30px;
     &:focus {
       outline: none;
     }
@@ -93,13 +95,7 @@
 }
 
 .fa {
-  font-size: 26px;
-
-  &-close {
-    align-self: flex-end;
-    float: right;
-    margin: 10px;
-  }
+  font-size: 24px;
 }
 
 li {

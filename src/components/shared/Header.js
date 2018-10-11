@@ -8,10 +8,16 @@ export default class Header extends Component {
       toggleMenu: false,
     }
     this.handleClick = this.handleClick.bind(this);
+    this.handleDrawerNav = this.handleDrawerNav.bind(this);
   }
 
   handleClick() {
-    this.setState({toggleMenu: !this.state.toggleMenu});
+    this.setState({ toggleMenu: !this.state.toggleMenu });
+  }
+
+  handleDrawerNav(index) {
+    this.props.handleNav(index);
+    this.handleClick();
   }
 
   render() {
@@ -21,31 +27,7 @@ export default class Header extends Component {
       : slideClass = 'slideInRight';
     return (
       <header className="header2">
-      <button type="button" onClick={this.handleClick}>
-          <span className="fa fa-bars"></span>
-        </button>
-        <Drawer slideClass={slideClass} onClick={this.handleClick}>
-          <button type="button" onClick={this.handleClick}>
-            <span className="fa fa-close"></span>
-          </button>
-          <ul className="header2__drawer__menu">
-          <li className="header__slide nav__slide--1 nav-active" onClick={() => this.props.handleNav(1)}>
-              <p>Home</p>
-            </li>
-            <li className="header__slide nav__slide--2" onClick={() => this.props.handleNav(2)}>
-              <p>Bio</p>
-            </li>
-            <li className="header__slide nav__slide--3" onClick={() => this.props.handleNav(3)}>
-              <p>Music</p>
-            </li>
-            <li className="header__slide nav__slide--4" onClick={() => this.props.handleNav(4)}>
-              <p>Tour</p>
-            </li>
-            <li className="header__slide nav__slide--5" onClick={() => this.props.handleNav(5)}>
-              <p>Contact</p>
-            </li>
-          </ul>
-        </Drawer>
+        <Drawer slideClass={slideClass} toggleMenu={this.state.toggleMenu} onClick={() => this.handleClick()} onNav={index => this.handleDrawerNav(index)} />
         <ul className="header2__menu" style={{ alignItems: 'center' }}>
             <li className="header__slide nav__slide--1 nav-active" onClick={() => this.props.handleNav(1)}>
               <div
