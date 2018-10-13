@@ -18,6 +18,13 @@
         }
     }
 
+    .playlist__container {
+      width: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
 
     @include md {
         &__artist-links {

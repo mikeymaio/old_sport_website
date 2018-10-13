@@ -329,7 +329,7 @@ $bgPics: (
 		height: 100%;
 		z-index: 15;
 	}
-	
+
 	&__letter {
 		position: absolute;
 		display: inline;
@@ -429,6 +429,10 @@ $bgPics: (
       }
     }
     &--4 {
+      &__text-wrapper {
+        align-items: flex-start;
+        padding-top: 75px;
+      }
       &__letter {
         font-size: 30vw;
         padding-top: calc(100vh / 2 - 15vw);

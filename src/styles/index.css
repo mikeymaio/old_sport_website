@@ -555,6 +555,10 @@ ul.social-icons {
 .slide--3__letter {
   padding-top: calc(100vh / 2 - 15vw); }
 
+.slide--4__text-wrapper {
+  align-items: flex-start;
+  padding-top: 75px; }
+
 .slide--4__letter {
   font-size: 30vw;
   padding-top: calc(100vh / 2 - 15vw); }
@@ -597,6 +601,10 @@ ul.social-icons {
 
 .slide--3__letter {
   padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__text-wrapper {
+  align-items: flex-start;
+  padding-top: 75px; }
 
 .slide--4__letter {
   font-size: 30vw;
@@ -641,6 +649,10 @@ ul.social-icons {
 .slide--3__letter {
   padding-top: calc(100vh / 2 - 15vw); }
 
+.slide--4__text-wrapper {
+  align-items: flex-start;
+  padding-top: 75px; }
+
 .slide--4__letter {
   font-size: 30vw;
   padding-top: calc(100vh / 2 - 15vw); }
@@ -684,6 +696,10 @@ ul.social-icons {
 .slide--3__letter {
   padding-top: calc(100vh / 2 - 15vw); }
 
+.slide--4__text-wrapper {
+  align-items: flex-start;
+  padding-top: 75px; }
+
 .slide--4__letter {
   font-size: 30vw;
   padding-top: calc(100vh / 2 - 15vw); }
@@ -726,6 +742,10 @@ ul.social-icons {
 
 .slide--3__letter {
   padding-top: calc(100vh / 2 - 15vw); }
+
+.slide--4__text-wrapper {
+  align-items: flex-start;
+  padding-top: 75px; }
 
 .slide--4__letter {
   font-size: 30vw;
@@ -1021,10 +1041,12 @@ ul.react-tabs__tab-list {
   justify-content: center; }
 
 .tour-list__wrapper {
-  max-width: 80vw;
+  width: 90vw;
   padding: 10px;
   max-height: 70vh;
-  overflow: auto; }
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
   .tour-list__wrapper div {
     font-size: 14px !important;
     text-transform: none !important;
@@ -1056,7 +1078,8 @@ ul.react-tabs__tab-list {
   align-items: flex-end;
   padding: 10;
   position: absolute;
-  bottom: -55px; }
+  bottom: 10px;
+  right: 15px; }
 
 /* Table column sizing
 ================================== */
@@ -1080,7 +1103,6 @@ span {
 .Rtable {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 3em 0;
   padding: 0;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   background: rgba(0, 0, 0, 0.5); }
@@ -1108,14 +1130,10 @@ span {
 /* Responsive
 ==================================== */
 @media all and (max-width: 750px) {
-  .tour-list__wrapper {
-    max-width: '100%'; }
   ul.react-tabs__tab-list .tab__header {
     font-size: 14px; }
   .is-striped {
     background: rgba(0, 0, 0, 0.5); }
-  .sk-logo__wrapper {
-    bottom: 79vh; }
   .Rtable {
     background: transparent; }
   .Rtable--collapse {
@@ -1190,6 +1208,12 @@ span {
     align-self: center;
     margin-left: 20;
     width: 50%; }
+
+.music-slide .playlist__container {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; }
 
 @media (min-width: 768px) {
   .music-slide__artist-links__container {

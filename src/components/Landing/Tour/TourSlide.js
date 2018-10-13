@@ -65,12 +65,11 @@ export default class TourSlide extends Component {
                   />
                 </TabPanel>
               </Tabs>
-
-              <div className="sk-logo__wrapper">
-                <img src={require('../../../assets/powered-by-sk/powered-by-songkick-white.svg')} style={{width: 100 }}/>
-              </div>
             </div>
           </div>
+        </div>
+        <div className="sk-logo__wrapper">
+          <img src={require('../../../assets/powered-by-sk/powered-by-songkick-white.svg')} alt="songkick" style={{width: 100 }}/>
         </div>
       </div>
     );

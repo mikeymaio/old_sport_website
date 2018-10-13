@@ -107,11 +107,7 @@ export default class Playlist extends Component {
   render() {
     return (
       <div
-        style={{
-          width: '100%',
-          overflowY: 'auto',
-          overflowX: 'hidden'
-        }}
+        className="playlist__container"
         tabIndex="0" ref={node => this.playlist = node}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
