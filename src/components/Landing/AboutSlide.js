@@ -6,8 +6,8 @@ export default class AboutSlide extends Component {
     return (
 
       <div className="swiper-slide">
-        <figure className="slide-bgimg slide-bgimg--2" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_19.jpg?alt=media&token=c1dda655-8629-4310-9871-47daf1e61237)' }}>
-          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_19.jpg?alt=media&token=c1dda655-8629-4310-9871-47daf1e61237" alt="about" className="entity-img" />
+        <figure className="slide-bgimg slide-bgimg--2" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website-219318.appspot.com/o/images%2FOld_Sport_19.jpg?alt=media&token=c50b8f90-987e-47f0-a082-a1f6c4af95cf)' }}>
+          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website-219318.appspot.com/o/images%2FOld_Sport_19.jpg?alt=media&token=c50b8f90-987e-47f0-a082-a1f6c4af95cf" alt="about" className="entity-img" />
         </figure>
         <div className="content">
           <div className="slide__darkbg slide--2__darkbg"></div>

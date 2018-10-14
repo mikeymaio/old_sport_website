@@ -31,8 +31,8 @@ export default class TourSlide extends Component {
   render() {
     return (
       <div className="swiper-slide">
-        <figure className="slide-bgimg slide-bgimg--4" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2F_DSC3855.jpg?alt=media&token=00a6f37e-ffbc-4560-966d-2e621c0d0c2f)' }}>
-          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2F_DSC3855.jpg?alt=media&token=00a6f37e-ffbc-4560-966d-2e621c0d0c2f" alt="tour" className="entity-img" />
+        <figure className="slide-bgimg slide-bgimg--4" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website-219318.appspot.com/o/images%2F_DSC3855.jpg?alt=media&token=42fff27d-c546-47d9-8552-2f638072aea0)' }}>
+          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website-219318.appspot.com/o/images%2F_DSC3855.jpg?alt=media&token=42fff27d-c546-47d9-8552-2f638072aea0" alt="tour" className="entity-img" />
         </figure>
         <div className="content">
           <div className="slide__darkbg slide--4__darkbg"></div>
@@ -54,6 +54,7 @@ export default class TourSlide extends Component {
                     slideIndex={this.props.slideIndex}
                     listIndex={1}
                     initHorizontalScroll={this.props.initHorizontalScroll}
+                    isMobile={this.props.isMobile}
                   />
                 </TabPanel>
                 <TabPanel>
@@ -62,6 +63,7 @@ export default class TourSlide extends Component {
                     slideIndex={this.props.slideIndex}
                     listIndex={2}
                     initHorizontalScroll={this.props.initHorizontalScroll}
+                    isMobile={this.props.isMobile}
                   />
                 </TabPanel>
               </Tabs>

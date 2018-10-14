@@ -19,6 +19,7 @@ export default class MusicSlide extends Component {
   componentWillMount() {
     database.ref('music').on('value', snap => {
       const tracks = Object.values(snap.val());
+      console.log('TRACKS = ', tracks);
       this.setState({ tracks, selectedTrack: tracks[0], streamUrl: tracks[0].songUrl });
     })
   }
@@ -34,8 +35,8 @@ export default class MusicSlide extends Component {
   render() {
     return (
       <div className="swiper-slide">
-        <figure className="slide-bgimg slide-bgimg--3" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_32.jpg?alt=media&token=982cc7b8-cbb9-49e6-8dea-2bbf9799c171)' }}>
-          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_32.jpg?alt=media&token=982cc7b8-cbb9-49e6-8dea-2bbf9799c171" alt="music" className="entity-img" />
+        <figure className="slide-bgimg slide-bgimg--3" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website-219318.appspot.com/o/images%2FOld_Sport_32.jpg?alt=media&token=43fceb79-d11f-4618-b3cd-4ca0fb61ebc3)' }}>
+          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website-219318.appspot.com/o/images%2FOld_Sport_32.jpg?alt=media&token=43fceb79-d11f-4618-b3cd-4ca0fb61ebc3" alt="music" className="entity-img" />
         </figure>
         <div className="content">
           <div className="slide__darkbg slide--3__darkbg"></div>

@@ -4,8 +4,8 @@ export default class ContactSlide extends Component {
   render() {
     return (
       <div className="swiper-slide">
-        <figure className="slide-bgimg slide-bgimg--5" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_14.jpg?alt=media&token=8201f525-c11f-4975-a8fd-2ba5edb864e2)' }}>
-          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website.appspot.com/o/images%2FOld_Sport_14.jpg?alt=media&token=8201f525-c11f-4975-a8fd-2ba5edb864e2" alt="contact" className="entity-img" />
+        <figure className="slide-bgimg slide-bgimg--5" style={{ backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/old-sport-website-219318.appspot.com/o/images%2FOld_Sport_14.jpg?alt=media&token=49c7305c-53dc-4ac8-b7f0-a82c7c051166)' }}>
+          <img src="https://firebasestorage.googleapis.com/v0/b/old-sport-website-219318.appspot.com/o/images%2FOld_Sport_14.jpg?alt=media&token=49c7305c-53dc-4ac8-b7f0-a82c7c051166" alt="contact" className="entity-img" />
         </figure>
         <div className="content">
         <div

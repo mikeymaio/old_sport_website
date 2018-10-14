@@ -52,6 +52,7 @@ export default class TourList extends Component {
       <div className="wrapper tour-list__wrapper" tabIndex="0" ref={node => this[`list${this.props.listIndex}`] = node}
       onMouseEnter={this.onMouseEnter}
       onMouseLeave={this.onMouseLeave}
+      style={this.props.isMobile ? { overflowY: 'scroll' } : { overflowY: 'auto' }}
       >
         <div className="Rtable Rtable--5cols Rtable--collapse tourlist">
           <div className="Rtable-row Rtable-row--head">

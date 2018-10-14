@@ -151,29 +151,29 @@ export default class Landing extends Component {
             <IntroSlide />
             <AboutSlide />
             <MusicSlide />
-            <TourSlide />
+            <TourSlide isMobile={this.isMobile()}/>
             <ContactSlide />
           </div>
-          <ul className="nav">
-            <li className={`nav__slide nav__slide--1 ${this.state.slideIndex === 0 ? 'nav-active' : ''}`}
-            onClick={() => this.handleNav(1)}>
-            </li>
-            <li className={`nav__slide nav__slide--2 ${this.state.slideIndex === 1 ? 'nav-active' : ''}`}
-            onClick={() => this.handleNav(2)}>
-            </li>
-            <li className={`nav__slide nav__slide--3 ${this.state.slideIndex === 2 ? 'nav-active' : ''}`}
-            onClick={() => this.handleNav(3)}>
-            </li>
-            <li className={`nav__slide nav__slide--4 ${this.state.slideIndex === 3 ? 'nav-active' : ''}`}
-            onClick={() => this.handleNav(4)}>
-            </li>
-            <li className={`nav__slide nav__slide--5 ${this.state.slideIndex === 4 ? 'nav-active' : ''}`}
-            onClick={() => this.handleNav(5)}>
-            </li>
-          </ul>
           {this.state.slideIndex !== 0 && <div className="swiper-button-prev swiper-button-white" onClick={() => this.swiper.slidePrev(1000)} />}
           {this.state.slideIndex !== 4 && <div className="swiper-button-next swiper-button-white" onClick={() => this.swiper.slideNext(1000)} />}
         </div>
+        <ul className="nav">
+          <li className={`nav__slide nav__slide--1 ${this.state.slideIndex === 0 ? 'nav-active' : ''}`}
+          onClick={() => this.handleNav(1)}>
+          </li>
+          <li className={`nav__slide nav__slide--2 ${this.state.slideIndex === 1 ? 'nav-active' : ''}`}
+          onClick={() => this.handleNav(2)}>
+          </li>
+          <li className={`nav__slide nav__slide--3 ${this.state.slideIndex === 2 ? 'nav-active' : ''}`}
+          onClick={() => this.handleNav(3)}>
+          </li>
+          <li className={`nav__slide nav__slide--4 ${this.state.slideIndex === 3 ? 'nav-active' : ''}`}
+          onClick={() => this.handleNav(4)}>
+          </li>
+          <li className={`nav__slide nav__slide--5 ${this.state.slideIndex === 4 ? 'nav-active' : ''}`}
+          onClick={() => this.handleNav(5)}>
+          </li>
+        </ul>
         <Social />
       </div>
     )

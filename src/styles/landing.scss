@@ -312,7 +312,8 @@ $bgPics: (
 		position: absolute;
 		width: 100%;
     height: calc(100vw * (3456 / 5184));
-		left: 0;
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
 		will-change: transform;
 		z-index: 10;
@@ -327,7 +328,7 @@ $bgPics: (
 		align-items: center;
 		width: 100%;
 		height: 100%;
-		z-index: 15;
+		z-index: 10;
 	}
 
 	&__letter {
@@ -339,7 +340,8 @@ $bgPics: (
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
+    height: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
     -webkit-text-fill-color: transparent;
 		-webkit-background-clip: text !important;
@@ -358,7 +360,8 @@ $bgPics: (
 			size: 8vw;
 			weight: 800;
 		}
-		text-transform: uppercase;
+    text-transform: uppercase;
+    -webkit-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
 		letter-spacing: 12px;
 		color: $txtClr;
@@ -391,6 +394,7 @@ $bgPics: (
 		$i: index($bgPics, $item);
 		&--#{$i} {
 			&__darkbg {
+        -webkit-transform: translate3d(0, 0, 0);
 				transform: translate3d(0, 0, 0);
 				will-change: transform;
 				&:after {
@@ -429,10 +433,10 @@ $bgPics: (
       }
     }
     &--4 {
-      &__text-wrapper {
-        align-items: flex-start;
-        padding-top: 75px;
-      }
+      // &__text-wrapper {
+      //   align-items: flex-start;
+      //   padding-top: 75px;
+      // }
       &__letter {
         font-size: 30vw;
         padding-top: calc(100vh / 2 - 15vw);
@@ -465,10 +469,11 @@ $bgPics: (
 	position: absolute;
 	bottom: 50px;
 	left: 50%;
-	transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 	list-style-type: none;
-	z-index: 10;
-	
+	z-index: 2;
+
 	&__slide {
 		position: relative;
 		display: inline-block;
@@ -483,6 +488,7 @@ $bgPics: (
 			height: 22px;
 		}
 		&:hover:after {
+      -webkit-transform: translate(-50%, -50%) scale(1,1);
 			transform: translate(-50%, -50%) scale(1,1);
 			opacity: 1;
 		}
@@ -491,7 +497,8 @@ $bgPics: (
 			content: '';
 			position: absolute;
 			top: 50%;
-			left: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%) scale(0,0);
 			transform: translate(-50%, -50%) scale(0,0);
 			width: 75%;
 			height: 75%;
@@ -500,7 +507,6 @@ $bgPics: (
 			opacity: 0;
 			transition: 300ms;
 		}
-		
 		&--1 {
 			margin-left: 0;
 		}
@@ -509,6 +515,7 @@ $bgPics: (
 
 .nav-active {
 	&:after {
+    -webkit-transform: translate(-50%, -50%) scale(1,1);
 		transform: translate(-50%, -50%) scale(1,1);
 		opacity: 1;
 	}
@@ -581,6 +588,7 @@ $bgPics: (
   &:hover{
     .swiper-button-prev,
     .swiper-button-next{
+      -webkit-transform: translateX(0);
       transform:translateX(0);
       opacity:1;
       visibility:visible;
@@ -593,6 +601,7 @@ $bgPics: (
 }
 .swiper-slide {
   overflow: hidden;
+  // position: relative;
   @extend %backface_visibility_hidden;
   .slide-bgimg{
     position:absolute;
@@ -625,10 +634,12 @@ $bgPics: (
       display: flex;
       font-size:13px;
       line-height:1.4;
+      -webkit-transform: translateX(50px);
       transform:translateX(50px);
       opacity:0;
       transition:opacity .3s ease, transform .7s ease;
       &.show {
+        -webkit-transform: translateX(0);
         transform:translateX(0);
         opacity:1;
       }
@@ -643,9 +654,11 @@ $bgPics: (
   @extend %transition_all_03s;
 }
 .swiper-button-prev {
+  -webkit-transform:translateX(50px);
   transform:translateX(50px);
 }
 .swiper-button-next {
+  -webkit-transform:translateX(-50px);
   transform:translateX(-50px);
 }
 
