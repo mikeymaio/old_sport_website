@@ -19,7 +19,6 @@ export default class MusicSlide extends Component {
   componentWillMount() {
     database.ref('music').on('value', snap => {
       const tracks = Object.values(snap.val());
-      console.log('TRACKS = ', tracks);
       this.setState({ tracks, selectedTrack: tracks[0], streamUrl: tracks[0].songUrl });
     })
   }
