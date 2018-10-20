@@ -487,10 +487,9 @@ $bgPics: (
 			width: 22px;
 			height: 22px;
 		}
-		&:hover:after {
-      -webkit-transform: translate(-50%, -50%) scale(1,1);
-			transform: translate(-50%, -50%) scale(1,1);
-			opacity: 1;
+
+    &:focus:after {
+			opacity: 0;
 		}
 
 		&:after {
@@ -736,6 +735,16 @@ $bgPics: (
   [class^="swiper-button-"]{
     visibility: visible;
     display: block;
+  }
+
+  .nav {
+    &__slide {
+      &:hover:after {
+        -webkit-transform: translate(-50%, -50%) scale(1,1);
+        transform: translate(-50%, -50%) scale(1,1);
+        opacity: 1;
+      }
+    }
   }
 }
 

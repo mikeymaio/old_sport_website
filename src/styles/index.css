@@ -775,10 +775,8 @@ ul.social-icons {
       .nav__slide {
         width: 22px;
         height: 22px; } }
-    .nav__slide:hover:after {
-      -webkit-transform: translate(-50%, -50%) scale(1, 1);
-      transform: translate(-50%, -50%) scale(1, 1);
-      opacity: 1; }
+    .nav__slide:focus:after {
+      opacity: 0; }
     .nav__slide:after {
       content: '';
       position: absolute;
@@ -1012,7 +1010,11 @@ ul.social-icons {
       background-position: center top; }
   [class^="swiper-button-"] {
     visibility: visible;
-    display: block; } }
+    display: block; }
+  .nav__slide:hover:after {
+    -webkit-transform: translate(-50%, -50%) scale(1, 1);
+    transform: translate(-50%, -50%) scale(1, 1);
+    opacity: 1; } }
 
 * {
   box-sizing: border-box; }
