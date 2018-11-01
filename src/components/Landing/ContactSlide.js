@@ -57,11 +57,11 @@ export default class ContactSlide extends Component {
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
-                  {/* <li>
-                    <a href="" target="_blank" className="social-icon">
+                  <li>
+                    <a href="https://www.youtube.com/channel/UCMxS8kCZ2ESw6w7laHrnTsQ" target="_blank" className="social-icon">
                       <i className="fa fa-youtube"></i>
                     </a>
-                  </li> */}
+                  </li>
                 </ul>
               </div>
             </div>
