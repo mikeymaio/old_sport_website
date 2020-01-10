@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Swiper from 'swiper';
+
 import Header from '../components/shared/Header';
 import IntroSlide from '../components/Landing/IntroSlide';
 import AboutSlide from '../components/Landing/AboutSlide';
@@ -6,7 +8,8 @@ import MusicSlide from '../components/Landing/MusicSlide';
 import TourSlide from '../components/Landing/Tour/TourSlide';
 import ContactSlide from '../components/Landing/ContactSlide';
 import Social from '../components/Social';
-import Swiper from 'swiper';
+import NewsModal from '../components/Landing/NewsModal';
+
 
 export default class Landing extends Component {
   constructor(props) {
@@ -17,10 +20,12 @@ export default class Landing extends Component {
       animSpd: 1000, // Change also in CSS
       animation: false,
       numSlides: 5,
+      modalVisible: true,
     }
     this.handleNav = this.handleNav.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
 
     this.initSwiper = this.initSwiper.bind(this);
 
@@ -142,9 +147,14 @@ export default class Landing extends Component {
     this.swiper = mainSlider;
   }
 
+  toggleModal() {
+    this.setState({ modalVisible: !this.state.modalVisible })
+  }
+
   render() {
     return (
       <div className="main-container">
+        <NewsModal visible={this.state.modalVisible} onClose={this.toggleModal} />
         <Header handleNav={this.handleNav} />
         <div className="swiper-container main-slider loading">
           <div className="swiper-wrapper">

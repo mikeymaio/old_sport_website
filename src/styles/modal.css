@@ -1,0 +1,45 @@
+.modal-container {
+  color: white; }
+
+.modal-content {
+  position: relative;
+  background: black;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%; }
+  .modal-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%; }
+
+.modal a {
+  margin-bottom: 20px; }
+  .modal a:hover {
+    text-decoration: underline; }
+
+.modal .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none; }
+  .modal .close-button span {
+    color: white; }
+
+.hidden-xs {
+  display: none; }
+
+.visible-xs {
+  display: block; }
+
+@media (min-width: 768px) {
+  .hidden-xs {
+    display: block; }
+  .visible-xs {
+    display: none; } }
